@@ -1,0 +1,47 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Post Management
+          .widget-content
+            form.form-horizontal
+              fieldset
+                .control-group
+                  label.control-label for="table_code"
+                    | Title
+                  .controls
+                    span
+                      = @post.title
+                .control-group
+                  label.control-label for="table_name"
+                    | Creator
+                  .controls
+                    span
+                      = @post.user_id
+                .control-group
+                  label.control-label for="table_name"
+                    | Category
+                  .controls
+                    span
+                      = @post.category_id
+                .control-group
+                  label.control-label for="table_name"
+                    | Description
+                  .controls
+                    span
+                      = @post.description
+                .control-group
+                  label.control-label for="content"
+                    | Content
+                  .controls
+                    .accordion
+                      .accordion-group
+                        .accordion-heading
+                        .accordion-body.collapse.in
+                          .accordion-inner
+                            = raw @post.content
+                .form-actions
+                  = link_to "Cancel", admin_posts_path, class: "btn"

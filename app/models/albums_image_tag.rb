@@ -1,0 +1,2 @@
+class AlbumsImageTag < ApplicationRecord
+end

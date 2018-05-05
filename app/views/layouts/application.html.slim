@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title SaleIntroduceWeb
+    meta charset="utf-8" /
+    meta content="IE=edge" http-equiv="X-UA-Compatible" /
+    meta content="width=device-width, initial-scale=1" name="viewport" /
+    link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" /
+    link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" /
+    link href="/assets/css/animate.css" rel="stylesheet" type="text/css" /
+    link href="/assets/css/font.css" rel="stylesheet" type="text/css" /
+    link href="/assets/css/li-scroller.css" rel="stylesheet" type="text/css" /
+    link href="/assets/css/slick.css" rel="stylesheet" type="text/css" /
+    link href="/assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css" /
+    link href="/assets/css/theme.css" rel="stylesheet" type="text/css" /
+    link href="/assets/css/style.css" rel="stylesheet" type="text/css" /
+    /![if lt IE 9]
+      | <script src="assets/js/html5shiv.min.js"></script
+      | <script src="assets/js/respond.min.js"></script
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = yield

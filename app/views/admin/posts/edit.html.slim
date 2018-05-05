@@ -1,0 +1,39 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Post Management
+          .widget-content
+            = form_for @post, url: admin_post_path(@post), html: {class: "form-horizontal", method: :put} do |f|
+              fieldset
+                .control-group
+                  label.control-label for="table_code"
+                    | Title
+                  .controls
+                    = f.text_field :title, class: "span6"
+                .control-group
+                  label.control-label for="table_name"
+                    | Creator
+                  .controls
+                    = f.text_field :user_id, class: "span6"
+                .control-group
+                  label.control-label for="table_name"
+                    | Category
+                  .controls
+                    = f.text_field :category_id, class: "span6"
+                .control-group
+                  label.control-label for="table_name"
+                    | Description
+                  .controls
+                    = f.text_field :description, class: "span6"
+                .control-group
+                  label.control-label for="content"
+                    | Content
+                  .controls
+                    = f.cktext_area :content, class: "span6"
+                .form-actions
+                  = f.submit "Save", class: "btn btn-primary"
+                  = link_to "Cancel", admin_posts_path, class: "btn"

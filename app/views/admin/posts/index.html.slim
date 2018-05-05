@@ -1,0 +1,33 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Post Management
+          .widget-content
+            table.table.table-striped.table-bordered.action-table
+              thead
+                tr
+                  th Title
+                  th Description
+                  th Creator
+                  th Category
+                  th.td-actions style="width: 140px"
+              tbody
+                - @posts.each do |post|
+                  tr
+                    td
+                      = post.title
+                    td
+                      = post.description
+                    td
+                      = post.user_id
+                    td
+                      = post.category_id
+                    td.td-actions
+                      = link_to "Edit", edit_admin_post_path(post), class: "btn btn-small btn-success"
+                      = link_to "Detail", admin_post_path(post), class: "btn btn-small btn-success"
+                      = link_to admin_post_path(post), class: "btn btn-danger btn-small", method: :delete do
+                        i.btn-icon-only.icon-remove
