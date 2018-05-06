@@ -20,13 +20,19 @@ end
 
 posts = []
 30.times do |time|
-	posts << Post.create(
+	chosen = (1..8).to_a.sample
+	post = Post.create(
 		user_id: user.id,
 		category_id: categories.sample.id,
 		title: Faker::Lorem.sentence,
 		content: Faker::Lorem.paragraph,
 		description: "test data"
 		)
+	File.open("db/seed_images/#{chosen}.jpg") do |f|
+		post.avatar = f
+	end
+	post.save
+	posts << post
 end
 
 arr_tags = [

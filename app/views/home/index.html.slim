@@ -75,34 +75,17 @@ a.scrollToTop href="#"
     .row
       .col-lg-8.col-md-8.col-sm-8
         .slick_slider
-          .single_iteam
-            a href="pages/single_page.html" 
-              img alt="" src="images/slider_img4.jpg" /
-            .slider_article
-              h2
-                a.slider_tittle href="pages/single_page.html"  Fusce eu nulla semper porttitor felis sit amet
-              p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui...
-          .single_iteam
-            a href="pages/single_page.html" 
-              img alt="" src="images/slider_img2.jpg" /
-            .slider_article
-              h2
-                a.slider_tittle href="pages/single_page.html"  Fusce eu nulla semper porttitor felis sit amet
-              p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui...
-          .single_iteam
-            a href="pages/single_page.html" 
-              img alt="" src="images/slider_img3.jpg" /
-            .slider_article
-              h2
-                a.slider_tittle href="pages/single_page.html"  Fusce eu nulla semper porttitor felis sit amet
-              p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui...
-          .single_iteam
-            a href="pages/single_page.html" 
-              img alt="" src="images/slider_img1.jpg" /
-            .slider_article
-              h2
-                a.slider_tittle href="pages/single_page.html"  Fusce eu nulla semper porttitor felis sit amet
-              p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui...
+          - @latest_posts.sample(4).each do |post|
+            .single_iteam
+              a href="pages/single_page.html" 
+                = image_tag(post.avatar_url) if post.avatar?
+                / img alt="" src="images/slider_img4.jpg" /
+              .slider_article
+                h2
+                  a.slider_tittle href="pages/single_page.html"
+                    = post.title
+                p
+                  = post.content.truncate(100)
       .col-lg-4.col-md-4.col-sm-4
         .latest_post
           h2
@@ -111,158 +94,130 @@ a.scrollToTop href="#"
             #prev-button
               i.fa.fa-chevron-up
             ul.latest_postnav
-              li
-                .media
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
-              li
-                .media
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
-              li
-                .media
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
-              li
-                .media
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
-              li
-                .media
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
+              - @latest_posts.last(5).each do |post|
+                li
+                  .media
+                    a.media-left href="pages/single_page.html" 
+                      = image_tag(post.avatar_url) if post.avatar?
+                      / img alt="" src="images/post_img1.jpg" /
+                    .media-body
+                      a.catg_title href="pages/single_page.html"
+                        = post.title
             #next-button
               i.fa.fa-chevron-down
   section#contentSection
     .row
       .col-lg-8.col-md-8.col-sm-8
         .left_content
-          .single_post_content
-            h2
-              span Business
-            .single_post_content_left
-              ul.business_catgnav.wow.fadeInDown
-                li
-                  figure.bsbig_fig
-                    a.featured_img href="pages/single_page.html" 
-                      img alt="" src="images/featured_img1.jpg" /
-                      span.overlay
-                    figcaption
-                      a href="pages/single_page.html"  Proin rhoncus consequat nisl eu ornare mauris
-                    p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...
-            .single_post_content_right
-              ul.spost_nav
-                li
-                  .media.wow.fadeInDown
-                    a.media-left href="pages/single_page.html" 
-                      img alt="" src="images/post_img1.jpg" /
-                    .media-body
-                      a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
-                li
-                  .media.wow.fadeInDown
-                    a.media-left href="pages/single_page.html" 
-                      img alt="" src="images/post_img2.jpg" /
-                    .media-body
-                      a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
-                li
-                  .media.wow.fadeInDown
-                    a.media-left href="pages/single_page.html" 
-                      img alt="" src="images/post_img1.jpg" /
-                    .media-body
-                      a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
-                li
-                  .media.wow.fadeInDown
-                    a.media-left href="pages/single_page.html" 
-                      img alt="" src="images/post_img2.jpg" /
-                    .media-body
-                      a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
-          .fashion_technology_area
-            .fashion
+          - @categories.last(6).each do |cate|
+            - if cate.posts.present?
+              - latest_post = cate.posts.last
+              - remaining_posts = cate.posts.to_a - [latest_post]
               .single_post_content
                 h2
-                  span Fashion
-                ul.business_catgnav.wow.fadeInDown
-                  li
-                    figure.bsbig_fig
-                      a.featured_img href="pages/single_page.html" 
-                        img alt="" src="images/featured_img2.jpg" /
-                        span.overlay
-                      figcaption
-                        a href="pages/single_page.html"  Proin rhoncus consequat nisl eu ornare mauris
-                      p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...
-                ul.spost_nav
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img1.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img2.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img1.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img2.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
-            .technology
-              .single_post_content
-                h2
-                  span Technology
-                ul.business_catgnav
-                  li
-                    figure.bsbig_fig.wow.fadeInDown
-                      a.featured_img href="pages/single_page.html" 
-                        img alt="" src="images/featured_img3.jpg" /
-                        span.overlay
-                      figcaption
-                        a href="pages/single_page.html"  Proin rhoncus consequat nisl eu ornare mauris
-                      p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...
-                ul.spost_nav
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img1.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img2.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img1.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img2.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
+                  span
+                    = cate.name
+                .single_post_content_left
+                  ul.business_catgnav.wow.fadeInDown
+                    li
+                      figure.bsbig_fig
+                        a.featured_img href="pages/single_page.html" 
+                          = image_tag(cate.posts.last.avatar_url) if cate.posts.last.avatar?
+                          / img alt="" src="images/featured_img1.jpg" /
+                          span.overlay
+                        figcaption
+                          a href="pages/single_page.html"
+                            = cate.posts.last.title
+                        p
+                          = cate.posts.last.content.truncate(100)
+                .single_post_content_right
+                  ul.spost_nav
+                    - remaining_posts.each do |remaining_post|
+                      li
+                        .media.wow.fadeInDown
+                          a.media-left href="pages/single_page.html" 
+                            = image_tag(remaining_post.avatar_url) if remaining_post.avatar?
+                            / img alt="" src="images/post_img1.jpg" /
+                          .media-body
+                            a.catg_title href="pages/single_page.html"
+                              = remaining_post.title
+          / .fashion_technology_area
+          /   .fashion
+          /     .single_post_content
+          /       h2
+          /         span Fashion
+          /       ul.business_catgnav.wow.fadeInDown
+          /         li
+          /           figure.bsbig_fig
+          /             a.featured_img href="pages/single_page.html" 
+          /               img alt="" src="images/featured_img2.jpg" /
+          /               span.overlay
+          /             figcaption
+          /               a href="pages/single_page.html"  Proin rhoncus consequat nisl eu ornare mauris
+          /             p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...
+          /       ul.spost_nav
+          /         li
+          /           .media.wow.fadeInDown
+          /             a.media-left href="pages/single_page.html" 
+          /               img alt="" src="images/post_img1.jpg" /
+          /             .media-body
+          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
+          /         li
+          /           .media.wow.fadeInDown
+          /             a.media-left href="pages/single_page.html" 
+          /               img alt="" src="images/post_img2.jpg" /
+          /             .media-body
+          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
+          /         li
+          /           .media.wow.fadeInDown
+          /             a.media-left href="pages/single_page.html" 
+          /               img alt="" src="images/post_img1.jpg" /
+          /             .media-body
+          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
+          /         li
+          /           .media.wow.fadeInDown
+          /             a.media-left href="pages/single_page.html" 
+          /               img alt="" src="images/post_img2.jpg" /
+          /             .media-body
+          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
+          /   .technology
+          /     .single_post_content
+          /       h2
+          /         span Technology
+          /       ul.business_catgnav
+          /         li
+          /           figure.bsbig_fig.wow.fadeInDown
+          /             a.featured_img href="pages/single_page.html" 
+          /               img alt="" src="images/featured_img3.jpg" /
+          /               span.overlay
+          /             figcaption
+          /               a href="pages/single_page.html"  Proin rhoncus consequat nisl eu ornare mauris
+          /             p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...
+          /       ul.spost_nav
+          /         li
+          /           .media.wow.fadeInDown
+          /             a.media-left href="pages/single_page.html" 
+          /               img alt="" src="images/post_img1.jpg" /
+          /             .media-body
+          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
+          /         li
+          /           .media.wow.fadeInDown
+          /             a.media-left href="pages/single_page.html" 
+          /               img alt="" src="images/post_img2.jpg" /
+          /             .media-body
+          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
+          /         li
+          /           .media.wow.fadeInDown
+          /             a.media-left href="pages/single_page.html" 
+          /               img alt="" src="images/post_img1.jpg" /
+          /             .media-body
+          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
+          /         li
+          /           .media.wow.fadeInDown
+          /             a.media-left href="pages/single_page.html" 
+          /               img alt="" src="images/post_img2.jpg" /
+          /             .media-body
+          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
           .single_post_content
             h2
               span Photography
@@ -340,57 +295,32 @@ a.scrollToTop href="#"
         aside.right_content
           .single_sidebar
             h2
-              span Popular Post
+              span Bài viết phổ biến
             ul.spost_nav
-              li
-                .media.wow.fadeInDown
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
-              li
-                .media.wow.fadeInDown
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img2.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
-              li
-                .media.wow.fadeInDown
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
-              li
-                .media.wow.fadeInDown
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img2.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
+              - @latest_posts.sample(4).each do |post|
+                li
+                  .media.wow.fadeInDown
+                    a.media-left href="pages/single_page.html"
+                      = image_tag(post.avatar_url) if post.avatar?
+                      / img alt="" src="images/post_img1.jpg" /
+                    .media-body
+                      a.catg_title href="pages/single_page.html"
+                        = post.title
           .single_sidebar
             ul.nav.nav-tabs role="tablist" 
               li.active role="presentation" 
-                a aria-controls="home" data-toggle="tab" href="#category" role="tab"  Category
+                a aria-controls="home" data-toggle="tab" href="#category" role="tab"  Danh mục
               li role="presentation" 
                 a aria-controls="profile" data-toggle="tab" href="#video" role="tab"  Video
               li role="presentation" 
-                a aria-controls="messages" data-toggle="tab" href="#comments" role="tab"  Comments
+                a aria-controls="messages" data-toggle="tab" href="#comments" role="tab"  Bình luận
             .tab-content
               #category.tab-pane.active role="tabpanel" 
                 ul
-                  li.cat-item
-                    a href="#"  Sports
-                  li.cat-item
-                    a href="#"  Fashion
-                  li.cat-item
-                    a href="#"  Business
-                  li.cat-item
-                    a href="#"  Technology
-                  li.cat-item
-                    a href="#"  Games
-                  li.cat-item
-                    a href="#"  Life &amp; Style
-                  li.cat-item
-                    a href="#"  Photography
+                  - @categories.each do |cate|
+                    li.cat-item
+                      a href="#"
+                        = cate.name
               #video.tab-pane role="tabpanel" 
                 .vide_area
                   iframe allowfullscreen="" frameborder="0" height="250" src="http://www.youtube.com/embed/h5QWbURNEpA?feature=player_detailpage" width="100%" 
