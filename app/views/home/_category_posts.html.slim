@@ -1,0 +1,37 @@
+- @categories.last(8).each_slice(4).each do |pair_cates|
+  .fashion_technology_area
+    - pair_cates.each do |cate|
+      - if cate.posts.present?
+        - latest_post = cate.posts.last
+        - remaining_posts = cate.posts.to_a - [latest_post]
+        .col-lg-3.col-md-3.col-sm-3
+          .single_post_content
+            h4
+              span
+                = cate.name
+              / .single_post_content_left
+            ul.business_catgnav.wow.fadeInDown
+              li style="height: 400px"
+                figure.bsbig_fig
+                  a.featured_img href="pages/single_page.html" 
+                    = image_tag(cate.posts.last.avatar_url, height: '250px', width: '100%') if cate.posts.last.avatar?
+                    / img alt="" src="images/featured_img1.jpg" /
+                    span.overlay
+                  figcaption
+                  	= link_to post_path(cate.posts.last), style: "font-weight: bold;"
+                  		= cate.posts.last.title
+                    / a href="pages/single_page.html" style="font-weight: bold;"
+                    /   = cate.posts.last.title
+                  = cate.posts.last.content.truncate(100).html_safe
+            / .single_post_content_right
+            ul.spost_nav
+              - remaining_posts.each do |remaining_post|
+                li
+                  .media.wow.fadeInDown
+                    / a.media-left href="pages/single_page.html" 
+                    /   = image_tag(remaining_post.avatar_url) if remaining_post.avatar?
+                    /   / img alt="" src="images/post_img1.jpg" /
+                    .media-body
+                    	= link_to post_path(remaining_post), class: "catg_title", style: "color: green"
+                    		span >>
+                    		= remaining_post.title

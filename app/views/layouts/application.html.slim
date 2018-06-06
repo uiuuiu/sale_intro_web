@@ -23,4 +23,66 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = yield
+    a.scrollToTop href="#" 
+      i.fa.fa-angle-up
+    .container
+      header#header
+        .row
+          / .col-lg-12.col-md-12.col-sm-12
+            .header_top
+              .header_top_left
+                ul.top_nav
+                  li
+                    a href="index.html"  Trang chủ
+                  li
+                    a href="#" Giới thiệu
+                  li
+                    a href="pages/contact.html"  Liên hệ
+              .header_top_right
+                p
+                  = Time.now.strftime("%d-%m-%Y")
+          .col-lg-12.col-md-12.col-sm-12
+            .header_bottom
+              .logo_area
+                a.logo href="index.html" 
+                  img alt="" src="images/logo.jpg" /
+      = yield
+      footer#footer
+        .footer_top
+          .row
+            .col-lg-4.col-md-4.col-sm-4
+              .footer_widget.wow.fadeInLeftBig
+                h2 Danh mục
+                ul.tag_nav
+                  - @categories.last(6).each do |cate|
+                    li
+                      a href="#"
+                        = cate.name
+            .col-lg-4.col-md-4.col-sm-4
+              .footer_widget.wow.fadeInDown
+                h2 Nhãn
+                ul.tag_nav
+                  - @tags.each do |tag|
+                    li.cat-item style="background: white"
+                      a href="#"
+                        = tag.name
+            .col-lg-4.col-md-4.col-sm-4
+              .footer_widget.wow.fadeInRightBig
+                h2 Liên hệ
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                address
+                  | Perfect News,1238 S . 123 St.Suite 25 Town City 3333,USA Phone: 123-326-789 Fax: 123-546-567
+  .footer_bottom
+    p.copyright
+      | Copyright © 2045
+      a href="index.html"  NewsFeed
+    p.developer Developed By Wpfreeware
+
+script src="/assets/js/jquery.min.js" 
+script src="/assets/js/wow.min.js" 
+script src="/assets/js/bootstrap.min.js" 
+script src="/assets/js/slick.min.js" 
+script src="/assets/js/jquery.li-scroller.1.0.js" 
+script src="/assets/js/jquery.newsTicker.min.js" 
+script src="/assets/js/jquery.fancybox.pack.js" 
+script src="/assets/js/custom.js" 

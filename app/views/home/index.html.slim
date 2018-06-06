@@ -1,424 +1,208 @@
-#preloader
-  #status  
-a.scrollToTop href="#" 
-  i.fa.fa-angle-up
-.container
-  header#header
-    .row
-      .col-lg-12.col-md-12.col-sm-12
-        .header_top
-          .header_top_left
-            ul.top_nav
-              li
-                a href="index.html"  Trang chủ
-              li
-                a href="#" Giới thiệu
-              li
-                a href="pages/contact.html"  Liên hệ
-          .header_top_right
-            p
-              = Time.now.strftime("%d-%m-%Y")
-      .col-lg-12.col-md-12.col-sm-12
-        .header_bottom
-          .logo_area
-            a.logo href="index.html" 
-              img alt="" src="images/logo.jpg" /
-  section#navArea
-    nav.navbar.navbar-inverse role="navigation" 
-      .navbar-header
-        button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button" 
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-      #navbar.navbar-collapse.collapse
-        ul.nav.navbar-nav.main_nav
-          li.active
-            a href="index.html" 
-              span.fa.fa-home.desktop-home
-              span.mobile-show Home
-          li
-            a href="#"  Công nghệ
-          li.dropdown
-            a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"  Di động
-            ul.dropdown-menu role="menu" 
-              li
-                a href="#"  Android
-              li
-                a href="#"  Samsung
-              li
-                a href="#"  Nokia
-              li
-                a href="#"  Walton Mobile
-              li
-                a href="#"  Sympony
-          li
-            a href="#"  Laptops
-          li
-            a href="#"  Tablets
-          li
-            a href="pages/contact.html"  Liên hệ chúng tôi
-          li
-            a href="pages/404.html"  404 Page
-  section#newsSection
-    .row
-      .col-lg-12.col-md-12
-        .latest_newsarea
-          span Tin mới nhất
-          ul#ticker01.news_sticker
-            = @latest_posts.each do |post|
-              li
-                a href="#" 
-                  img alt="" src="images/news_thumbnail3.jpg"
-                    = post.title
-  section#sliderSection
-    .row
-      .col-lg-8.col-md-8.col-sm-8
-        .slick_slider
-          - @latest_posts.sample(4).each do |post|
-            .single_iteam
-              a href="pages/single_page.html" 
-                = image_tag(post.avatar_url) if post.avatar?
-                / img alt="" src="images/slider_img4.jpg" /
-              .slider_article
-                h2
-                  a.slider_tittle href="pages/single_page.html"
-                    = post.title
-                p
-                  = post.content.truncate(100)
-      .col-lg-4.col-md-4.col-sm-4
-        .latest_post
-          h2
-            span Bài viết mới nhất
-          .latest_post_container
-            #prev-button
-              i.fa.fa-chevron-up
-            ul.latest_postnav
-              - @latest_posts.last(5).each do |post|
-                li
-                  .media
-                    a.media-left href="pages/single_page.html" 
-                      = image_tag(post.avatar_url) if post.avatar?
-                      / img alt="" src="images/post_img1.jpg" /
-                    .media-body
-                      a.catg_title href="pages/single_page.html"
-                        = post.title
-            #next-button
-              i.fa.fa-chevron-down
-  section#contentSection
-    .row
-      .col-lg-8.col-md-8.col-sm-8
-        .left_content
-          - @categories.last(6).each do |cate|
-            - if cate.posts.present?
-              - latest_post = cate.posts.last
-              - remaining_posts = cate.posts.to_a - [latest_post]
-              .single_post_content
-                h2
-                  span
-                    = cate.name
-                .single_post_content_left
-                  ul.business_catgnav.wow.fadeInDown
-                    li
-                      figure.bsbig_fig
-                        a.featured_img href="pages/single_page.html" 
-                          = image_tag(cate.posts.last.avatar_url) if cate.posts.last.avatar?
-                          / img alt="" src="images/featured_img1.jpg" /
-                          span.overlay
-                        figcaption
-                          a href="pages/single_page.html"
-                            = cate.posts.last.title
-                        p
-                          = cate.posts.last.content.truncate(100)
-                .single_post_content_right
-                  ul.spost_nav
-                    - remaining_posts.each do |remaining_post|
-                      li
-                        .media.wow.fadeInDown
-                          a.media-left href="pages/single_page.html" 
-                            = image_tag(remaining_post.avatar_url) if remaining_post.avatar?
-                            / img alt="" src="images/post_img1.jpg" /
-                          .media-body
-                            a.catg_title href="pages/single_page.html"
-                              = remaining_post.title
-          / .fashion_technology_area
-          /   .fashion
-          /     .single_post_content
-          /       h2
-          /         span Fashion
-          /       ul.business_catgnav.wow.fadeInDown
-          /         li
-          /           figure.bsbig_fig
-          /             a.featured_img href="pages/single_page.html" 
-          /               img alt="" src="images/featured_img2.jpg" /
-          /               span.overlay
-          /             figcaption
-          /               a href="pages/single_page.html"  Proin rhoncus consequat nisl eu ornare mauris
-          /             p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...
-          /       ul.spost_nav
-          /         li
-          /           .media.wow.fadeInDown
-          /             a.media-left href="pages/single_page.html" 
-          /               img alt="" src="images/post_img1.jpg" /
-          /             .media-body
-          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
-          /         li
-          /           .media.wow.fadeInDown
-          /             a.media-left href="pages/single_page.html" 
-          /               img alt="" src="images/post_img2.jpg" /
-          /             .media-body
-          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
-          /         li
-          /           .media.wow.fadeInDown
-          /             a.media-left href="pages/single_page.html" 
-          /               img alt="" src="images/post_img1.jpg" /
-          /             .media-body
-          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
-          /         li
-          /           .media.wow.fadeInDown
-          /             a.media-left href="pages/single_page.html" 
-          /               img alt="" src="images/post_img2.jpg" /
-          /             .media-body
-          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
-          /   .technology
-          /     .single_post_content
-          /       h2
-          /         span Technology
-          /       ul.business_catgnav
-          /         li
-          /           figure.bsbig_fig.wow.fadeInDown
-          /             a.featured_img href="pages/single_page.html" 
-          /               img alt="" src="images/featured_img3.jpg" /
-          /               span.overlay
-          /             figcaption
-          /               a href="pages/single_page.html"  Proin rhoncus consequat nisl eu ornare mauris
-          /             p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...
-          /       ul.spost_nav
-          /         li
-          /           .media.wow.fadeInDown
-          /             a.media-left href="pages/single_page.html" 
-          /               img alt="" src="images/post_img1.jpg" /
-          /             .media-body
-          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
-          /         li
-          /           .media.wow.fadeInDown
-          /             a.media-left href="pages/single_page.html" 
-          /               img alt="" src="images/post_img2.jpg" /
-          /             .media-body
-          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
-          /         li
-          /           .media.wow.fadeInDown
-          /             a.media-left href="pages/single_page.html" 
-          /               img alt="" src="images/post_img1.jpg" /
-          /             .media-body
-          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
-          /         li
-          /           .media.wow.fadeInDown
-          /             a.media-left href="pages/single_page.html" 
-          /               img alt="" src="images/post_img2.jpg" /
-          /             .media-body
-          /               a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
-          .single_post_content
-            h2
-              span Photography
-            ul.photograph_nav.wow.fadeInDown
-              li
-                .photo_grid
-                  figure.effect-layla
-                    a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img2.jpg" title=("Photography Ttile 1") 
-                      img alt="" src="images/photograph_img2.jpg" /
-              li
-                .photo_grid
-                  figure.effect-layla
-                    a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img3.jpg" title=("Photography Ttile 2") 
-                      img alt="" src="images/photograph_img3.jpg" /
-              li
-                .photo_grid
-                  figure.effect-layla
-                    a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img4.jpg" title=("Photography Ttile 3") 
-                      img alt="" src="images/photograph_img4.jpg" /
-              li
-                .photo_grid
-                  figure.effect-layla
-                    a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img4.jpg" title=("Photography Ttile 4") 
-                      img alt="" src="images/photograph_img4.jpg" /
-              li
-                .photo_grid
-                  figure.effect-layla
-                    a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img2.jpg" title=("Photography Ttile 5") 
-                      img alt="" src="images/photograph_img2.jpg" /
-              li
-                .photo_grid
-                  figure.effect-layla
-                    a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img3.jpg" title=("Photography Ttile 6") 
-                      img alt="" src="images/photograph_img3.jpg" /
-          .single_post_content
-            h2
-              span Games
-            .single_post_content_left
-              ul.business_catgnav
-                li
-                  figure.bsbig_fig.wow.fadeInDown
-                    a.featured_img href="pages/single_page.html" 
-                      img alt="" src="images/featured_img1.jpg" /
-                      span.overlay
-                    figcaption
-                      a href="pages/single_page.html"  Proin rhoncus consequat nisl eu ornare mauris
-                    p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...
-            .single_post_content_right
-              ul.spost_nav
-                li
-                  .media.wow.fadeInDown
-                    a.media-left href="pages/single_page.html" 
-                      img alt="" src="images/post_img1.jpg" /
-                    .media-body
-                      a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
-                li
-                  .media.wow.fadeInDown
-                    a.media-left href="pages/single_page.html" 
-                      img alt="" src="images/post_img2.jpg" /
-                    .media-body
-                      a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
-                li
-                  .media.wow.fadeInDown
-                    a.media-left href="pages/single_page.html" 
-                      img alt="" src="images/post_img1.jpg" /
-                    .media-body
-                      a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
-                li
-                  .media.wow.fadeInDown
-                    a.media-left href="pages/single_page.html" 
-                      img alt="" src="images/post_img2.jpg" /
-                    .media-body
-                      a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
-      .col-lg-4.col-md-4.col-sm-4
-        aside.right_content
-          .single_sidebar
-            h2
-              span Bài viết phổ biến
-            ul.spost_nav
-              - @latest_posts.sample(4).each do |post|
-                li
-                  .media.wow.fadeInDown
-                    a.media-left href="pages/single_page.html"
-                      = image_tag(post.avatar_url) if post.avatar?
-                      / img alt="" src="images/post_img1.jpg" /
-                    .media-body
-                      a.catg_title href="pages/single_page.html"
-                        = post.title
-          .single_sidebar
-            ul.nav.nav-tabs role="tablist" 
-              li.active role="presentation" 
-                a aria-controls="home" data-toggle="tab" href="#category" role="tab"  Danh mục
-              li role="presentation" 
-                a aria-controls="profile" data-toggle="tab" href="#video" role="tab"  Video
-              li role="presentation" 
-                a aria-controls="messages" data-toggle="tab" href="#comments" role="tab"  Bình luận
-            .tab-content
-              #category.tab-pane.active role="tabpanel" 
-                ul
-                  - @categories.each do |cate|
-                    li.cat-item
-                      a href="#"
-                        = cate.name
-              #video.tab-pane role="tabpanel" 
-                .vide_area
-                  iframe allowfullscreen="" frameborder="0" height="250" src="http://www.youtube.com/embed/h5QWbURNEpA?feature=player_detailpage" width="100%" 
-              #comments.tab-pane role="tabpanel" 
-                ul.spost_nav
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img1.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img2.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img1.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
-                  li
-                    .media.wow.fadeInDown
-                      a.media-left href="pages/single_page.html" 
-                        img alt="" src="images/post_img2.jpg" /
-                      .media-body
-                        a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
-          .single_sidebar.wow.fadeInDown
-            h2
-              span Sponsor
-            a.sideAdd href="#" 
-              img alt="" src="images/add_img.jpg" /
-          .single_sidebar.wow.fadeInDown
-            h2
-              span Category Archive
-            select.catgArchive
-              option Select Category
-              option Life styles
-              option Sports
-              option Technology
-              option Treads
-          .single_sidebar.wow.fadeInDown
-            h2
-              span Links
-            ul
-              li
-                a href="#"  Blog
-              li
-                a href="#"  Rss Feed
-              li
-                a href="#"  Login
-              li
-                a href="#"  Life &amp; Style
-  footer#footer
-    .footer_top
-      .row
-        .col-lg-4.col-md-4.col-sm-4
-          .footer_widget.wow.fadeInLeftBig
-            h2 Flickr Images
-        .col-lg-4.col-md-4.col-sm-4
-          .footer_widget.wow.fadeInDown
-            h2 Tag
-            ul.tag_nav
-              li
-                a href="#"  Games
-              li
-                a href="#"  Sports
-              li
-                a href="#"  Fashion
-              li
-                a href="#"  Business
-              li
-                a href="#"  Life &amp; Style
-              li
-                a href="#"  Technology
-              li
-                a href="#"  Photo
-              li
-                a href="#"  Slider
-        .col-lg-4.col-md-4.col-sm-4
-          .footer_widget.wow.fadeInRightBig
-            h2 Contact
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            address
-              | Perfect News,1238 S . 123 St.Suite 25 Town City 3333,USA Phone: 123-326-789 Fax: 123-546-567
-    .footer_bottom
-      p.copyright
-        | Copyright © 2045
-        a href="index.html"  NewsFeed
-      p.developer Developed By Wpfreeware
-script src="/assets/js/jquery.min.js" 
-script src="/assets/js/wow.min.js" 
-script src="/assets/js/bootstrap.min.js" 
-script src="/assets/js/slick.min.js" 
-script src="/assets/js/jquery.li-scroller.1.0.js" 
-script src="/assets/js/jquery.newsTicker.min.js" 
-script src="/assets/js/jquery.fancybox.pack.js" 
-script src="/assets/js/custom.js" 
+section#navArea
+  nav.navbar.navbar-inverse role="navigation" 
+    .navbar-header
+      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button" 
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav.main_nav
+        li.active
+          a href="index.html" 
+            span.fa.fa-home.desktop-home
+            span.mobile-show Home
+        li
+          a href="#"  Công nghệ
+        li.dropdown
+          a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"  Di động
+          ul.dropdown-menu role="menu" 
+            li
+              a href="#"  Android
+            li
+              a href="#"  Samsung
+            li
+              a href="#"  Nokia
+            li
+              a href="#"  Walton Mobile
+            li
+              a href="#"  Sympony
+        li
+          a href="#"  Laptops
+        li
+          a href="#"  Tablets
+        li
+          a href="pages/contact.html"  Liên hệ chúng tôi
+        li
+          a href="pages/404.html"  404 Page
+section#sliderSection
+  = render partial: "latest_posts"
+section#contentSection
+  .row
+    .col-lg-12.col-md-12.col-sm-12
+      .left_content
+        = render partial: "category_posts"
 
+        .single_post_content
+          h2
+            span Photography
+          ul.photograph_nav.wow.fadeInDown
+            li
+              .photo_grid
+                figure.effect-layla
+                  a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img2.jpg" title=("Photography Ttile 1") 
+                    img alt="" src="images/photograph_img2.jpg" /
+            li
+              .photo_grid
+                figure.effect-layla
+                  a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img3.jpg" title=("Photography Ttile 2") 
+                    img alt="" src="images/photograph_img3.jpg" /
+            li
+              .photo_grid
+                figure.effect-layla
+                  a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img4.jpg" title=("Photography Ttile 3") 
+                    img alt="" src="images/photograph_img4.jpg" /
+            li
+              .photo_grid
+                figure.effect-layla
+                  a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img4.jpg" title=("Photography Ttile 4") 
+                    img alt="" src="images/photograph_img4.jpg" /
+            li
+              .photo_grid
+                figure.effect-layla
+                  a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img2.jpg" title=("Photography Ttile 5") 
+                    img alt="" src="images/photograph_img2.jpg" /
+            li
+              .photo_grid
+                figure.effect-layla
+                  a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img3.jpg" title=("Photography Ttile 6") 
+                    img alt="" src="images/photograph_img3.jpg" /
+        / .single_post_content
+          h2
+            span Games
+          .single_post_content_left
+            ul.business_catgnav
+              li
+                figure.bsbig_fig.wow.fadeInDown
+                  a.featured_img href="pages/single_page.html" 
+                    img alt="" src="images/featured_img1.jpg" /
+                    span.overlay
+                  figcaption
+                    a href="pages/single_page.html"  Proin rhoncus consequat nisl eu ornare mauris
+                  p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...
+          .single_post_content_right
+            ul.spost_nav
+              li
+                .media.wow.fadeInDown
+                  a.media-left href="pages/single_page.html" 
+                    img alt="" src="images/post_img1.jpg" /
+                  .media-body
+                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
+              li
+                .media.wow.fadeInDown
+                  a.media-left href="pages/single_page.html" 
+                    img alt="" src="images/post_img2.jpg" /
+                  .media-body
+                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
+              li
+                .media.wow.fadeInDown
+                  a.media-left href="pages/single_page.html" 
+                    img alt="" src="images/post_img1.jpg" /
+                  .media-body
+                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
+              li
+                .media.wow.fadeInDown
+                  a.media-left href="pages/single_page.html" 
+                    img alt="" src="images/post_img2.jpg" /
+                  .media-body
+                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
+    / .col-lg-4.col-md-4.col-sm-4
+      / aside.right_content
+        / .single_sidebar
+        /   h2
+        /     span Bài viết phổ biến
+        /   ul.spost_nav
+        /     - @latest_posts.sample(4).each do |post|
+        /       li
+        /         .media.wow.fadeInDown
+        /           a.media-left href="pages/single_page.html"
+        /             = image_tag(post.avatar_url) if post.avatar?
+        /             / img alt="" src="images/post_img1.jpg" /
+        /           .media-body
+        /             a.catg_title href="pages/single_page.html"
+        /               = post.title
+        .single_sidebar
+          ul.nav.nav-tabs role="tablist" 
+            li.active role="presentation" 
+              a aria-controls="home" data-toggle="tab" href="#category" role="tab"  Danh mục
+            li role="presentation" 
+              a aria-controls="profile" data-toggle="tab" href="#video" role="tab"  Video
+            li role="presentation" 
+              a aria-controls="messages" data-toggle="tab" href="#comments" role="tab"  Tags
+          .tab-content
+            #category.tab-pane.active role="tabpanel" 
+              ul
+                - @categories.each do |cate|
+                  li.cat-item
+                    a href="#"
+                      = cate.name
+            #video.tab-pane role="tabpanel" 
+              .vide_area
+                iframe allowfullscreen="" frameborder="0" height="250" src="http://www.youtube.com/embed/h5QWbURNEpA?feature=player_detailpage" width="100%" 
+            #comments.tab-pane role="tabpanel" 
+              ul
+                - @tags.each do |tag|
+                  li.cat-item
+                    a href="#"
+                      = tag.name
+              / ul.spost_nav
+              /   li
+              /     .media.wow.fadeInDown
+              /       a.media-left href="pages/single_page.html" 
+              /         img alt="" src="images/post_img1.jpg" /
+              /       .media-body
+              /         a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
+              /   li
+              /     .media.wow.fadeInDown
+              /       a.media-left href="pages/single_page.html" 
+              /         img alt="" src="images/post_img2.jpg" /
+              /       .media-body
+              /         a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
+              /   li
+              /     .media.wow.fadeInDown
+              /       a.media-left href="pages/single_page.html" 
+              /         img alt="" src="images/post_img1.jpg" /
+              /       .media-body
+              /         a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
+              /   li
+              /     .media.wow.fadeInDown
+              /       a.media-left href="pages/single_page.html" 
+              /         img alt="" src="images/post_img2.jpg" /
+              /       .media-body
+              /         a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
+        .single_sidebar.wow.fadeInDown
+          h2
+            span Sponsor
+          a.sideAdd href="#" 
+            img alt="" src="images/add_img.jpg" /
+        .single_sidebar.wow.fadeInDown
+          h2
+            span Category Archive
+          select.catgArchive
+            option Select Category
+            option Life styles
+            option Sports
+            option Technology
+            option Treads
+        .single_sidebar.wow.fadeInDown
+          h2
+            span Links
+          ul
+            li
+              a href="#"  Blog
+            li
+              a href="#"  Rss Feed
+            li
+              a href="#"  Login
+            li
+              a href="#"  Life &amp; Style
