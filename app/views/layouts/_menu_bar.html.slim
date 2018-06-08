@@ -12,7 +12,7 @@ section#navArea
           = link_to root_path
             span.fa.fa-home.desktop-home
             span.mobile-show Home
-        - @categories.each do |cate|
+        - @categories.last(8).each do |cate|
         	li
         		= link_to category_path(cate)
         			= cate.name

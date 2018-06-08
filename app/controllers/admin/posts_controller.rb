@@ -29,13 +29,13 @@ class Admin::PostsController < AdminController
   end
 
   def create
-  	params[:user_id] = 1
+  	params[:post][:user_id] = 1
   	@post = Post.create(permit_params)
   	redirect_to edit_admin_post_path(@post)
   end
 
   private
     def permit_params
-      params.require(:post).permit(:title, :category_id, :user_id, :description, :content)
+      params.require(:post).permit(:title, :category_id, :user_id, :description, :content, :avatar)
     end
 end

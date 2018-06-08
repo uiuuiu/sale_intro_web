@@ -3,12 +3,11 @@
     .slick_slider
       - @latest_posts.sample(4).each do |post|
         .single_iteam
-          a href="pages/single_page.html" 
+          = link_to post_path(post)
             = image_tag(post.avatar_url) if post.avatar?
-            / img alt="" src="images/slider_img4.jpg" /
           .slider_article
             h2
-              a.slider_tittle href="pages/single_page.html"
+              = link_to post_path(post), class: "slider_tittle"
                 = post.title
             p
               = post.content.html_safe.truncate(100)

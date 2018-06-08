@@ -21,6 +21,11 @@
                     = f.select :category_id, @categories.map{|m| [m.name, m.id]},  class: "span6"
                 .control-group
                   label.control-label for="table_name"
+                    | Ảnh bài viết
+                  .controls
+                    = f.file_field :avatar, class: "span6"
+                .control-group
+                  label.control-label for="table_name"
                     | Mô tả
                   .controls
                     = f.text_field :description, class: "span6"
