@@ -2,6 +2,12 @@ class Admin::PostsController < AdminController
 
 	def index
 		@posts = Post.all.order(:id)
+		@posts.includes(:category, :user)
+	end
+
+	def new
+		@post = Post.new
+		@categories = Category.all
 	end
 
 	def show
@@ -10,6 +16,7 @@ class Admin::PostsController < AdminController
 
 	def edit
 		@post = Post.find(params[:id])
+		@categories = Category.all
 	end
 
 	def update
@@ -19,6 +26,12 @@ class Admin::PostsController < AdminController
   end
 
   def destroy
+  end
+
+  def create
+  	params[:user_id] = 1
+  	@post = Post.create(permit_params)
+  	redirect_to edit_admin_post_path(@post)
   end
 
   private

@@ -1,0 +1,94 @@
+section#contentSection
+  .row
+    .col-lg-8.col-md-8.col-sm-8
+      .left_content
+        .single_page
+          ol.breadcrumb
+          	i.fa.fa-tags style="color: red"
+            li style="color: white"
+              = @tag.name
+        - @tag.posts.distinct.each do |post|
+          .row.pb-10
+            .col-lg-4.col-md-4.col-sm-4
+              = image_tag(post.avatar_url, style: "max-width:100%; max-height:100%;") if post.avatar_url
+            .col-lg-8.col-md-8.col-sm-8
+              h3 style="font-weight: bold"
+                = link_to post_path(post)
+                  = post.title
+              = post.content.truncate(100).html_safe
+    .col-lg-4.col-md-4.col-sm-4
+      aside.right_content
+        .single_sidebar
+          h2
+            span Bài viết liên quan
+          ul.spost_nac
+          ul.spost_nav
+        .single_sidebar
+          ul.nav.nav-tabs role="tablist"
+            li.active role="presentation" 
+              a aria-controls="home" data-toggle="tab" href="#category" role="tab"  Nhãn
+            li role="presentation" 
+              a aria-controls="profile" data-toggle="tab" href="#video" role="tab"  Video
+            li role="presentation" 
+              a aria-controls="messages" data-toggle="tab" href="#comments" role="tab"  Bình luận
+          .tab-content
+            #category.tab-pane.active role="tabpanel" 
+              ul
+                - @tags.each do |tag|
+                  li.cat-item
+                    / a href="#"
+                    = link_to tag_path(tag)
+                      = tag.name
+            #video.tab-pane role="tabpanel" 
+              .vide_area
+                iframe allowfullscreen="" frameborder="0" height="250" src="http://www.youtube.com/embed/h5QWbURNEpA?feature=player_detailpage" width="100%" 
+            #comments.tab-pane role="tabpanel" 
+              ul.spost_nav
+                li
+                  .media.wow.fadeInDown
+                    a.media-left href="single_page.html" 
+                      img alt="" src="../images/post_img1.jpg" /
+                    .media-body
+                      a.catg_title href="single_page.html"  Aliquam malesuada diam eget turpis varius 1
+                li
+                  .media.wow.fadeInDown
+                    a.media-left href="single_page.html" 
+                      img alt="" src="../images/post_img2.jpg" /
+                    .media-body
+                      a.catg_title href="single_page.html"  Aliquam malesuada diam eget turpis varius 2
+                li
+                  .media.wow.fadeInDown
+                    a.media-left href="single_page.html" 
+                      img alt="" src="../images/post_img1.jpg" /
+                    .media-body
+                      a.catg_title href="single_page.html"  Aliquam malesuada diam eget turpis varius 3
+                li
+                  .media.wow.fadeInDown
+                    a.media-left href="single_page.html" 
+                      img alt="" src="../images/post_img2.jpg" /
+                    .media-body
+                      a.catg_title href="single_page.html"  Aliquam malesuada diam eget turpis varius 4
+        .single_sidebar.wow.fadeInDown
+          h2
+            span Sponsor
+          a.sideAdd href="#" 
+            img alt="" src="../images/add_img.jpg" /
+        .single_sidebar.wow.fadeInDown
+          h2
+            span Danh mục
+          select.catgArchive
+            option Chọn danh mục
+            - @categories.each do |cate|
+              option =cate.name
+        .single_sidebar.wow.fadeInDown
+          h2
+            span Liên kết
+          ul
+            li
+              a href="#"  Blog
+            li
+              a href="#"  Rss Feed
+            li
+              a href="#"  Login
+            li
+              a href="#"  Life &amp; Style

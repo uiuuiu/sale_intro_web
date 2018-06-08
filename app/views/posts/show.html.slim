@@ -18,8 +18,8 @@ section#contentSection
               i.fa.fa-calendar
               = @post.created_at
             i.fa.fa-tags
-            - @post.tags.each do |tag|
-              a href="#" 
+            - @post.tags.distinct.each do |tag|
+              = link_to tag_path(tag)
                 = tag.name
           .single_page_content
             = image_tag(@post.avatar_url, class: "img-center") if @post.avatar?
@@ -87,7 +87,7 @@ section#contentSection
             - @related_posts.each do |post|
               li
                 .media.wow.fadeInDown
-                  = link_to post_path(post), class: "mdeia-left"
+                  = link_to post_path(post), class: "mdeia-left", style: "color: blue"
                     = post.title
           / ul.spost_nav
           /   li

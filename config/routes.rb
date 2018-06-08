@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :posts
   end
   resources :posts
+  resources :categories
+  resources :tags
 end

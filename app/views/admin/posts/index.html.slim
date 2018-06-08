@@ -5,15 +5,17 @@
         .widget
           .widget-header
             span
-            h3 Post Management
+            h3 Quản lý bài viết
+            = link_to new_admin_post_path, class: "btn", style: "float: right; margin: 5px; margin-right: 55px;"
+              | Tạo mới
           .widget-content
             table.table.table-striped.table-bordered.action-table
               thead
                 tr
-                  th Title
-                  th Description
-                  th Creator
-                  th Category
+                  th Tiêu đề
+                  th Mô tả
+                  th Người tạo
+                  th Danh mục
                   th.td-actions style="width: 140px"
               tbody
                 - @posts.each do |post|
@@ -25,7 +27,7 @@
                     td
                       = post.user_id
                     td
-                      = post.category_id
+                      = post.category.name
                     td.td-actions
                       = link_to "Edit", edit_admin_post_path(post), class: "btn btn-small btn-success"
                       = link_to "Detail", admin_post_path(post), class: "btn btn-small btn-success"

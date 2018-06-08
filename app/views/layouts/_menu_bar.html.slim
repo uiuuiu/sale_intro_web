@@ -1,0 +1,41 @@
+section#navArea
+  nav.navbar.navbar-inverse role="navigation" 
+    .navbar-header
+      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button" 
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav.main_nav
+        li.active
+          = link_to root_path
+            span.fa.fa-home.desktop-home
+            span.mobile-show Home
+        - @categories.each do |cate|
+        	li
+        		= link_to category_path(cate)
+        			= cate.name
+        / li
+        /   a href="#"  Công nghệ
+        / li.dropdown
+        /   a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"  Di động
+        /   ul.dropdown-menu role="menu" 
+        /     li
+        /       a href="#"  Android
+        /     li
+        /       a href="#"  Samsung
+        /     li
+        /       a href="#"  Nokia
+        /     li
+        /       a href="#"  Walton Mobile
+        /     li
+        /       a href="#"  Sympony
+        / li
+        /   a href="#"  Laptops
+        / li
+        /   a href="#"  Tablets
+        / li
+        /   a href="pages/contact.html"  Liên hệ chúng tôi
+        / li
+        /   a href="pages/404.html"  404 Page

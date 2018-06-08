@@ -1,0 +1,24 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Quản lý danh mục
+          .widget-content
+            = form_for @category, url: admin_category_path(@category), html: {class: "form-horizontal", method: :put} do |f|
+              fieldset
+                .control-group
+                  label.control-label for="table_code"
+                    | Tên danh mục
+                  .controls
+                    = f.text_field :name, class: "span6"
+                .control-group
+                  label.control-label for="table_name"
+                    | Description
+                  .controls
+                    = f.text_field :description, class: "span6"
+                .form-actions
+                  = f.submit "Cập nhật", class: "btn btn-primary"
+                  = link_to "Huỷ", admin_categories_path, class: "btn"

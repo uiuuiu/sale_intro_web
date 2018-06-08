@@ -7,18 +7,13 @@
             span
             h3 Quản lý bài viết
           .widget-content
-            = form_for @post, url: admin_post_path(@post), html: {class: "form-horizontal", method: :put} do |f|
+            = form_for @post, url: admin_posts_path, html: {class: "form-horizontal", method: :post} do |f|
               fieldset
                 .control-group
                   label.control-label for="table_code"
                     | Tiêu đề
                   .controls
                     = f.text_field :title, class: "span6"
-                .control-group
-                  label.control-label for="table_name"
-                    | Người tạo
-                  .controls
-                    = f.text_field :user_id, class: "span6"
                 .control-group
                   label.control-label for="table_name"
                     | Danh mục
@@ -35,5 +30,5 @@
                   .controls
                     = f.cktext_area :content, class: "span6", ckeditor: {height: 600}
                 .form-actions
-                  = f.submit "Cập nhật", class: "btn btn-primary"
+                  = f.submit "Tạo mới", class: "btn btn-primary"
                   = link_to "Huỷ", admin_posts_path, class: "btn"
