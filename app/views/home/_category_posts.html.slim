@@ -11,7 +11,7 @@
                 = cate.name
               / .single_post_content_left
             ul.business_catgnav.wow.fadeInDown
-              li style="height: 400px"
+              li style="height: 400px; overflow: hidden"
                 figure.bsbig_fig
                   a.featured_img href="pages/single_page.html" 
                     = image_tag(cate.posts.last.avatar_url, height: '250px', width: '100%') if cate.posts.last.avatar?

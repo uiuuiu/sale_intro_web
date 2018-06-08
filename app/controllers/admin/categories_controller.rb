@@ -23,6 +23,11 @@ class Admin::CategoriesController < AdminController
   end
 
   def destroy
+  	@category = Category.find(params[:id])
+  	@category.destroy
+  	if @category.errors.blank?
+  		@category.posts.update_all(category_id: 0)
+  	end
   end
 
   private

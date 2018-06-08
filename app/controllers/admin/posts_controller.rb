@@ -26,6 +26,8 @@ class Admin::PostsController < AdminController
   end
 
   def destroy
+  	@post = Post.find(params[:id])
+  	@post.destroy
   end
 
   def create
