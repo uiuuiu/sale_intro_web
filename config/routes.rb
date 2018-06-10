@@ -10,8 +10,12 @@ Rails.application.routes.draw do
     resources :admin_home
     resources :categories
     resources :posts
+    resources :service_categories
+    resources :service_posts
   end
   resources :posts
   resources :categories
+  resources :service_categories
+  resources :service_posts
   resources :tags
 end

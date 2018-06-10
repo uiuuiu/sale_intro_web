@@ -12,10 +12,28 @@ section#navArea
           = link_to root_path
             span.fa.fa-home.desktop-home
             span.mobile-show Home
-        - @categories.last(8).each do |cate|
-        	li
-        		= link_to category_path(cate)
-        			= cate.name
+        li
+          a href="#"  Giới thiệu
+        li.dropdown
+          a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"  Dịch vụ
+          ul.dropdown-menu role="menu" 
+            - @service_categories.each do |cate|
+              li
+                = link_to service_category_path(cate)
+                  = cate.name
+        li.dropdown
+          a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"  Tin tức
+          ul.dropdown-menu role="menu" 
+            - @categories.each do |cate|
+              li
+                = link_to category_path(cate)
+                  = cate.name
+        li
+          a href="#" Nhãn tin
+        li
+          a href="#" Hỏi đáp
+        li
+          a href="#" Liên hệ
         / li
         /   a href="#"  Công nghệ
         / li.dropdown

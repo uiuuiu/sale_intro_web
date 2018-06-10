@@ -4,16 +4,15 @@ section#contentSection
       .left_content
         .single_page
           ol.breadcrumb
-          	i.fa.fa-tags style="color: red"
             li style="color: white"
-              = @tag.name
-        - @tag.posts.distinct.each do |post|
+              = @category.name
+        - @category.service_posts.each do |post|
           .row.pb-10
             .col-lg-4.col-md-4.col-sm-4.post-col
               = image_tag(post.avatar_url, style: "width:100%; max-height:100%;") if post.avatar_url
             .col-lg-8.col-md-8.col-sm-8
               h3 style="font-weight: bold"
-                = link_to post_path(post)
+                = link_to service_post_path(post)
                   = post.title
               = strip_tags(post.content).truncate(100)
           .seperator-post
@@ -37,7 +36,6 @@ section#contentSection
               ul
                 - @tags.each do |tag|
                   li.cat-item
-                    / a href="#"
                     = link_to tag_path(tag)
                       = tag.name
             #video.tab-pane role="tabpanel" 

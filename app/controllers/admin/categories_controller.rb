@@ -30,6 +30,11 @@ class Admin::CategoriesController < AdminController
   	end
   end
 
+  def create
+    @category = Category.create(permit_params)
+    redirect_to edit_admin_category_path(@category)
+  end
+
   private
     def permit_params
       params.require(:category).permit(:name, :description)

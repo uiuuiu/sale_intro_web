@@ -8,13 +8,14 @@ section#contentSection
               = @category.name
         - @category.posts.each do |post|
           .row.pb-10
-            .col-lg-4.col-md-4.col-sm-4
-              = image_tag(post.avatar_url, style: "max-width:100%; max-height:100%;") if post.avatar_url
+            .col-lg-4.col-md-4.col-sm-4.post-col
+              = image_tag(post.avatar_url, style: "width:100%; max-height:100%;") if post.avatar_url
             .col-lg-8.col-md-8.col-sm-8
               h3 style="font-weight: bold"
                 = link_to post_path(post)
                   = post.title
-              = post.content.truncate(100).html_safe
+              = strip_tags(post.content).truncate(100)
+          .seperator-post
     .col-lg-4.col-md-4.col-sm-4
       aside.right_content
         .single_sidebar

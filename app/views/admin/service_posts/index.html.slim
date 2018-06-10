@@ -1,0 +1,35 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Quản lý bài viết Dịch Vụ
+            = link_to new_admin_service_post_path, class: "btn", style: "float: right; margin: 5px; margin-right: 55px;"
+              | Tạo mới
+          .widget-content
+            table.table.table-striped.table-bordered.action-table
+              thead
+                tr
+                  th Tiêu đề
+                  th Mô tả
+                  th Người tạo
+                  th Danh mục
+                  th.td-actions style="width: 140px"
+              tbody
+                - @posts.each do |post|
+                  tr
+                    td
+                      = post.title
+                    td
+                      = post.description
+                    td
+                      = post.user_id
+                    td
+                      = post.service_category.try(:name)
+                    td.td-actions
+                      = link_to "Edit", edit_admin_service_post_path(post), class: "btn btn-small btn-success"
+                      = link_to "Detail", admin_service_post_path(post), class: "btn btn-small btn-success"
+                      = link_to admin_service_post_path(post), class: "btn btn-danger btn-small", method: :delete do
+                        i.btn-icon-only.icon-remove

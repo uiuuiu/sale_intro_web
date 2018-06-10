@@ -5,7 +5,7 @@
         .widget
           .widget-header
             span
-            h3 Quản lý bài viết
+            h3 Quản lý bài viết Dịch Vụ
           .widget-content
             form.form-horizontal
               fieldset
@@ -26,7 +26,7 @@
                     | Danh mục
                   .controls
                     span
-                      = @post.category_id
+                      = @post.service_category.try(:name)
                 .control-group
                   label.control-label for="table_name"
                     | Mô tả
@@ -44,4 +44,4 @@
                           .accordion-inner
                             = raw @post.content
                 .form-actions
-                  = link_to "Cancel", admin_posts_path, class: "btn"
+                  = link_to "Cancel", admin_service_posts_path, class: "btn"

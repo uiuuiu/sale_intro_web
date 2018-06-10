@@ -51,6 +51,34 @@ posts.each do |post|
 	end
 end
 
+arr_service_categories = [
+	"Chứng nhận hợp chuẩn", "Chứng nhận hợp quy", "Chứng nhận ISO/HACCP", "Chứng nhận VIETGAP", "Công bố sản phẩm",
+	"Sở hữu trí tuệ", "Xin cấp giấy phép", "Phần mềm ứng dụng"
+]
+
+categories = []
+arr_service_categories.each do |name|
+	categories << ServiceCategory.create(name: name, description: "seed data")
+end
+
+posts = []
+30.times do |time|
+	chosen = (1..8).to_a.sample
+	post = ServicePost.create(
+		user_id: user.id,
+		service_category_id: categories.sample.id,
+		title: Faker::Lorem.sentence,
+		content: Faker::Lorem.paragraph,
+		description: "test data"
+		)
+	File.open("db/seed_images/#{chosen}.jpg") do |f|
+		post.avatar = f
+	end
+	post.save
+	posts << post
+end
+
+
 
 
 

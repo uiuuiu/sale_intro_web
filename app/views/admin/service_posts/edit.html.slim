@@ -5,43 +5,40 @@
         .widget
           .widget-header
             span
-            h3 Quản lý bài viết
+            h3 Quản lý bài viết Dịch Vụ
           .widget-content
-            form.form-horizontal
+            = form_for @post, url: admin_service_post_path(@post), html: {class: "form-horizontal", method: :put} do |f|
               fieldset
                 .control-group
                   label.control-label for="table_code"
                     | Tiêu đề
                   .controls
-                    span
-                      = @post.title
+                    = f.text_field :title, class: "span6"
                 .control-group
                   label.control-label for="table_name"
                     | Người tạo
                   .controls
-                    span
-                      = @post.user_id
+                    = f.text_field :user_id, class: "span6"
                 .control-group
                   label.control-label for="table_name"
                     | Danh mục
                   .controls
-                    span
-                      = @post.category_id
+                    = f.select :service_category_id, @categories.map{|m| [m.name, m.id]},  class: "span6"
                 .control-group
                   label.control-label for="table_name"
                     | Mô tả
                   .controls
-                    span
-                      = @post.description
+                    = f.text_field :description, class: "span6"
+                .control-group
+                  label.control-label for="table_name"
+                    | Ảnh bài viết
+                  .controls
+                    = f.file_field :avatar, class: "span6"
                 .control-group
                   label.control-label for="content"
                     | Nội dung
                   .controls
-                    .accordion
-                      .accordion-group
-                        .accordion-heading
-                        .accordion-body.collapse.in
-                          .accordion-inner
-                            = raw @post.content
+                    = f.cktext_area :content, class: "span6", ckeditor: {height: 600}
                 .form-actions
-                  = link_to "Cancel", admin_posts_path, class: "btn"
+                  = f.submit "Cập nhật", class: "btn btn-primary"
+                  = link_to "Huỷ", admin_service_posts_path, class: "btn"

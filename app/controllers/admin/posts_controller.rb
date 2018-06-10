@@ -1,39 +1,39 @@
 class Admin::PostsController < AdminController
 
-	def index
-		@posts = Post.all.order(:id)
-		@posts.includes(:category, :user)
-	end
+  def index
+    @posts = Post.all.order(:id)
+    @posts.includes(:category, :user)
+  end
 
-	def new
-		@post = Post.new
-		@categories = Category.all
-	end
+  def new
+    @post = Post.new
+    @categories = Category.all
+  end
 
-	def show
-		@post = Post.find(params[:id])
-	end
+  def show
+    @post = Post.find(params[:id])
+  end
 
-	def edit
-		@post = Post.find(params[:id])
-		@categories = Category.all
-	end
+  def edit
+    @post = Post.find(params[:id])
+    @categories = Category.all
+  end
 
-	def update
+  def update
     @post = Post.find(params[:id])
     @post.update(permit_params)
     redirect_to :back
   end
 
   def destroy
-  	@post = Post.find(params[:id])
-  	@post.destroy
+    @post = Post.find(params[:id])
+    @post.destroy
   end
 
   def create
-  	params[:post][:user_id] = 1
-  	@post = Post.create(permit_params)
-  	redirect_to edit_admin_post_path(@post)
+    params[:post][:user_id] = 1
+    @post = Post.create(permit_params)
+    redirect_to edit_admin_post_path(@post)
   end
 
   private

@@ -8,12 +8,20 @@
             span Dashboard
         li
           = link_to admin_posts_path do
-            i
+            i.icon-list-alt
             span Bài viết
         li
           = link_to admin_categories_path do
-            i
+            i.icon-list-alt
             span Danh mục
+        li
+          = link_to admin_service_categories_path do
+            i.icon-list-alt
+            span Danh mục Dịch vụ
+        li
+          = link_to admin_service_posts_path do
+            i.icon-list-alt
+            span Bài viết Dịch vụ
         / li
         /   a href="reports.html"
         /     i.icon-list-alt
