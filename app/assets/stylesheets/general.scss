@@ -1,0 +1,46 @@
+.phone-support {
+  background: #3A9C2B url('support.png') right bottom no-repeat;
+  height: 300px;
+  padding-bottom: 40px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: lighter;
+  line-height: 22px;
+}
+.hotline {
+  width: 236px;
+  height: 82px;
+  background: url('hotline.png');
+  margin-top: 25px;
+  margin-left: 15px;
+  position: absolute;
+}
+
+.hotline span {
+  display: inline-block;
+  padding-top: 37px;
+  padding-left: 55px;
+  font-weight: bold;
+  font-size: 22px;
+  color: #e20000;
+}
+
+.support-info {
+  position: absolute;
+  padding-left: 30px;
+  padding-top: 120px;
+}
+
+.access-counter-div {
+  height: 100px;
+  border: 1px solid lightgreen;
+}
+.seperator {
+  width: 99%;
+  border: 0.5px dashed;
+  color: grey;
+}
+.pd-10 {padding: 10px}
+.pb-10 {padding-bottom: 10px}
+.pl-10 {padding-left: 10px}
+.pl-15 {padding-left: 15px}
