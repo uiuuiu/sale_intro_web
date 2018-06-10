@@ -48,7 +48,8 @@
           ul
             - @tags.each do |tag|
               li.cat-item
-                a href="#"
+                / a href="#"
+                = link_to tag_path(tag)
                   = tag.name
         #video.tab-pane role="tabpanel" 
           .vide_area
