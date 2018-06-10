@@ -14,16 +14,18 @@
             ul.business_catgnav.wow.fadeInDown
               li style="height: 400px; overflow: hidden"
                 figure.bsbig_fig
-                  a.featured_img href="pages/single_page.html" 
-                    = image_tag(cate.service_posts.last.avatar_url, height: '250px', width: '100%') if cate.service_posts.last.avatar?
+                  / a.featured_img href="pages/single_page.html"
+                  - post = cate.service_posts.last
+                  = link_to service_post_path(post), class: "featured_img"
+                    = image_tag(post.avatar_url, height: '250px', width: '100%') if post.avatar?
                     / img alt="" src="images/featured_img1.jpg" /
                     span.overlay
                   figcaption
-                  	= link_to service_post_path(cate.service_posts.last), style: "font-weight: bold;"
-                  		= cate.service_posts.last.title
+                  	= link_to service_post_path(post), style: "font-weight: bold;"
+                  		= post.title
                     / a href="pages/single_page.html" style="font-weight: bold;"
                     /   = cate.posts.last.title
-                  = strip_tags(cate.service_posts.last.content).truncate(100)
+                  = strip_tags(post.content).truncate(100)
             / .single_post_content_right
             ul.spost_nav
               - remaining_posts.each do |remaining_post|
