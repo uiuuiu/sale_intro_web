@@ -1,0 +1,35 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Liên hệ
+            = link_to new_admin_contact_path, class: "btn", style: "float: right; margin: 5px; margin-right: 55px;"
+              | Tạo mới
+          .widget-content
+            table.table.table-striped.table-bordered.action-table
+              thead
+                tr
+                  th ID
+                  th Mô tả
+                  th Ngày tạo
+                  th Ngày cập nhật
+                  th.td-actions style="width: 140px"
+              tbody
+                - @contacts.each do |contact|
+                  tr
+                    td
+                      = contact.id
+                    td
+                      = contact.description
+                    td
+                      = contact.created_at
+                    td
+                      = contact.updated_at
+                    td.td-actions
+                      = link_to "Show", admin_contact_path(contact), class: "btn btn-small btn-success"
+                      = link_to "Edit", edit_admin_contact_path(contact), class: "btn btn-small btn-success"
+                      = link_to admin_contact_path(contact), class: "btn btn-danger btn-small", method: :delete do
+                        i.btn-icon-only.icon-remove

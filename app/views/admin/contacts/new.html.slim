@@ -1,0 +1,29 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Liên hệ
+          .widget-content
+            = form_for @contact, url: admin_contacts_path, html: {class: "form-horizontal", method: :post} do |f|
+              fieldset
+                .control-group
+                  label.control-label for="table_code"
+                    | Sử dụng Liên hệ viết chính
+                  .controls
+                    = f.check_box :active, {}, 1, 0
+                .control-group
+                  label.control-label for="table_code"
+                    | Mô tả
+                  .controls
+                    = f.text_field :description, class: "span6"
+                .control-group
+                  label.control-label for="table_name"
+                    | Nội dung
+                  .controls
+                    = f.cktext_area :content, class: "span6", ckeditor: {height: 600, width: 710}
+                .form-actions
+                  = f.submit "Tạo mới", class: "btn btn-primary"
+                  = link_to "Huỷ", admin_contacts_path, class: "btn"

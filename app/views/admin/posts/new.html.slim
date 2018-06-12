@@ -33,7 +33,7 @@
                   label.control-label for="content"
                     | Nội dung
                   .controls
-                    = f.cktext_area :content, class: "span6", ckeditor: {height: 600}
+                    = f.cktext_area :content, class: "span6", ckeditor: {height: 600, width: 710}
                 .form-actions
                   = f.submit "Tạo mới", class: "btn btn-primary"
                   = link_to "Huỷ", admin_posts_path, class: "btn"

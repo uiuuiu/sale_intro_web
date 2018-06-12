@@ -1,0 +1,25 @@
+section#contentSection
+  .row
+    .col-lg-8.col-md-8.col-sm-8
+      .left_content
+        ol.breadcrumb
+          li
+            = link_to root_path, "Home"
+          li
+            | Liên hệ
+        .contact_area
+          - if @contact.present?
+            = raw @contact.content
+          = form_for @contact_form, url: contacts_path, html: {class: "contact_form", method: :post} do |f|
+            = f.text_field :full_name, class: "form-control", placeholder: "Họ Tên"
+            = f.text_field :phone_number, class: "form-control", placeholder: "Số điện thoại"
+            = f.text_field :email, class: "form-control", placeholder: "Email"
+            = f.text_field :title, class: "form-control", placeholder: "Tiêu đề"
+            = f.text_field :address, class: "form-control", placeholder: "Địa chỉ"
+            = f.text_area :content, class: "form-control", cols: 30, placeholder: "Nội dung", rows: 10
+            = f.submit "Gởi"
+            / input.form-control placeholder="Name*" type="text" /
+            / input.form-control placeholder="Email*" type="email" /
+            / textarea.form-control cols="30" placeholder="Message*" rows="10" 
+            / input type="submit" value=("Send Message") /
+    = render partial: "layouts/right_side_content"

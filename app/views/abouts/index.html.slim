@@ -1,0 +1,18 @@
+section#contentSection
+  .row
+    .col-lg-8.col-md-8.col-sm-8
+      .left_content
+        .single_page
+          ol.breadcrumb
+            li
+              = link_to root_path, "Home"
+            li
+              | About
+            li.active Mobile
+          h1 Về chúng tôi
+          .single_page_content
+            / = image_tag(@post.avatar_url, class: "img-center") if @post.avatar?
+            / img.img-center alt="" src="../images/single_post_img.jpg" /
+            - if @about.present?
+              = @about.content.html_safe
+    = render partial: "layouts/right_side_content"

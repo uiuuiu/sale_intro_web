@@ -1,0 +1,29 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Liên hệ
+          .widget-content
+            form.form-horizontal
+              fieldset
+                .control-group
+                  label.control-label for="table_name"
+                    | Mô tả
+                  .controls
+                    span
+                      = @contact.description
+                .control-group
+                  label.control-label for="content"
+                    | Nội dung
+                  .controls
+                    .accordion style="width: 760px;"
+                      .accordion-group
+                        .accordion-heading
+                        .accordion-body.collapse.in
+                          .accordion-inner style="width: 710px;"
+                            = raw @contact.content
+                .form-actions
+                  = link_to "Cancel", admin_contacts_path, class: "btn"

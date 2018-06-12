@@ -7,12 +7,16 @@ Rails.application.routes.draw do
 
   get 'admin/', to: 'admin/admin_home#index'
   namespace :admin do
+    resources :abouts
+    resources :contacts
     resources :admin_home
     resources :categories
     resources :posts
     resources :service_categories
     resources :service_posts
   end
+  resources :abouts, only: [:index]
+  resources :contacts, only: [:index, :create]
   resources :posts
   resources :categories
   resources :service_categories
