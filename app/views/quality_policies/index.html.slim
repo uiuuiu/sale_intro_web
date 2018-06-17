@@ -1,0 +1,14 @@
+section#contentSection
+  .row
+    .col-lg-8.col-md-8.col-sm-8
+      .left_content
+        ol.breadcrumb
+          li
+            = link_to root_path, "Home"
+          li
+            | Chính sách chất lượng
+        .contact_area
+          - if @quality_policy.present?
+            = raw @quality_policy.content
+            = image_tag @quality_policy.avatar_url
+    = render partial: "layouts/right_side_content"

@@ -14,8 +14,10 @@ Rails.application.routes.draw do
     resources :posts
     resources :service_categories
     resources :service_posts
+    resources :quality_policies
   end
   resources :abouts, only: [:index]
+  resources :quality_policies, only: [:index]
   resources :contacts, only: [:index, :create]
   resources :posts
   resources :categories

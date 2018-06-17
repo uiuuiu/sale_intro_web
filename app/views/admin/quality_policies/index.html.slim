@@ -1,0 +1,28 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Quản lý Chính sách Chất lượng
+            = link_to new_admin_quality_policy_path, class: "btn", style: "float: right; margin: 5px; margin-right: 55px;"
+              | Tạo mới
+          .widget-content
+            table.table.table-striped.table-bordered.action-table
+              thead
+                tr
+                  th ID
+                  th Mô tả
+                  th.td-actions style="width: 140px"
+              tbody
+                - @quality_policies.each do |policy|
+                  tr
+                    td
+                      = policy.id
+                    td
+                      = policy.description
+                    td.td-actions
+                      = link_to "Edit", edit_admin_quality_policy_path(policy), class: "btn btn-small btn-success"
+                      = link_to admin_quality_policy_path(policy), class: "btn btn-danger btn-small", method: :delete do
+                        i.btn-icon-only.icon-remove

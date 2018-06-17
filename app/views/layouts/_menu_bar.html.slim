@@ -19,15 +19,19 @@ section#navArea
               = link_to abouts_path
                 | Về chúng tôi
             li
-              a
+              = link_to quality_policies_path
                 | Chính sách chất lượng
         li.dropdown
           a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"  Dịch vụ
-          ul.dropdown-menu role="menu" 
+          ul.dropdown-menu role="menu"
             - @service_categories.each do |cate|
-              li
+              li.dropdown-2
                 = link_to service_category_path(cate)
                   = cate.name
+                ul.dropdown-menu-2
+                  - cate.service_posts.each do |s_post|
+                    li
+                      = link_to s_post.title, service_post_path(s_post)
         li.dropdown
           a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"  Tin tức
           ul.dropdown-menu role="menu" 

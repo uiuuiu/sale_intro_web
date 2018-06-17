@@ -1,0 +1,29 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Quản lý Chính sách Chất lượng
+          .widget-content
+            form.form-horizontal
+              fieldset
+                .control-group
+                  label.control-label for="table_name"
+                    | Mô tả
+                  .controls
+                    span
+                      = @quality_policy.description
+                .control-group
+                  label.control-label for="content"
+                    | Nội dung
+                  .controls
+                    .accordion style="width: 760px;"
+                      .accordion-group
+                        .accordion-heading
+                        .accordion-body.collapse.in
+                          .accordion-inner style="width: 710px;"
+                            = raw @quality_policy.content
+                .form-actions
+                  = link_to "Cancel", admin_quality_policies_path, class: "btn"
