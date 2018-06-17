@@ -42,7 +42,7 @@ html
                 p
                   = Time.now.strftime("%d-%m-%Y")
           .col-lg-12.col-md-12.col-sm-12
-            .header_bottom
+            .header_bottom style="background: url('#{image_path('header-background.png')}')"
               .logo_area
                 = link_to root_path, class: "logo"
                   = image_tag("logo_trans.png", size: "100x100")
