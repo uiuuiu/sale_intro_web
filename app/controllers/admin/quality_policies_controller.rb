@@ -25,6 +25,7 @@ class Admin::QualityPoliciesController < AdminController
   def destroy
     @quality_policy = QualityPolicy.find(params[:id])
     @quality_policy.destroy
+    redirect_to :back
   end
 
   def create

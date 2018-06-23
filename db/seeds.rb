@@ -12,7 +12,7 @@ arr_categories = [
 	"Kinh tế - Tài Chính", "Khoa học - Giáo Dục", "Khoa học - Công nghệ", "Nghệ thuật", "Mạng Xã Hội",
 	"Thể thao", "Âm nhạc", "Giải trí", "Du lịch", "Ẩm thực"
 ]
-
+Category.create(name: "temp")
 categories = []
 arr_categories.each do |name|
 	categories << Category.create(name: name, description: "seed data")
@@ -55,7 +55,7 @@ arr_service_categories = [
 	"Chứng nhận hợp chuẩn", "Chứng nhận hợp quy", "Chứng nhận ISO/HACCP", "Chứng nhận VIETGAP", "Công bố sản phẩm",
 	"Sở hữu trí tuệ", "Xin cấp giấy phép", "Phần mềm ứng dụng"
 ]
-
+ServiceCategory.create(name: "temp", description: "temp category")
 categories = []
 arr_service_categories.each do |name|
 	categories << ServiceCategory.create(name: name, description: "seed data")

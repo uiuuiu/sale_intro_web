@@ -28,6 +28,7 @@ class Admin::ServicePostsController < AdminController
   def destroy
     @post = ServicePost.find(params[:id])
     @post.destroy
+    redirect_to :back
   end
 
   def create

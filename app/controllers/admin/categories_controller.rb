@@ -1,7 +1,9 @@
 class Admin::CategoriesController < AdminController
 
+  before_action :get_category, :check_if_temp_category, except: [:index, :new, :create]
+
 	def index
-		@categories = Category.all.order(:id)
+		@categories = Category.all_without_temp.order(:id)
 	end
 
 	def new
@@ -9,15 +11,12 @@ class Admin::CategoriesController < AdminController
 	end
 
 	def show
-		@category = Category.find(params[:id])
 	end
 
 	def edit
-		@category = Category.find(params[:id])
 	end
 
 	def update
-    @category = Category.find(params[:id])
     @category.update(permit_params)
     redirect_to :back
   end
@@ -26,8 +25,9 @@ class Admin::CategoriesController < AdminController
   	@category = Category.find(params[:id])
   	@category.destroy
   	if @category.errors.blank?
-  		@category.posts.update_all(category_id: 0)
+  		@category.posts.update_all(category_id: ServiceCategory.temp_category.id)
   	end
+    redirect_to :back
   end
 
   def create
@@ -38,5 +38,13 @@ class Admin::CategoriesController < AdminController
   private
     def permit_params
       params.require(:category).permit(:name, :description)
+    end
+
+    def get_category
+      @category = Category.find(params[:id])
+    end
+
+    def check_if_temp_category
+      return redirect_to :back if @category.temp?
     end
 end
