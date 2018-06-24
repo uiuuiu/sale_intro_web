@@ -10,7 +10,7 @@
               = link_to post_path(post), class: "slider_tittle"
                 = post.title
             p
-              = post.content.html_safe.truncate(100)
+              = strip_tags(post.content).truncate(100)
   .col-lg-4.col-md-4.col-sm-4
     .latest_post
       h2
