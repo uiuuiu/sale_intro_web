@@ -58,6 +58,16 @@ html lang="en"
       /! /navbar-inner
     /! /navbar
     = render partial: "layouts/admin_head_menu"
+    - if flash.present?
+      .error-form
+        .container
+          .row
+            .span12
+              .widget
+                - flash.each do |key, value|
+                  div class="#{flash_class(key)}" 
+                    = value
+
     .main
       = yield
     .footer

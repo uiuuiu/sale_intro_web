@@ -11,6 +11,21 @@
   position: fixed;
 }
 
+.home-post-seperator {
+  border: 2px dashed;
+  display: inline-block;
+  width: 99%
+}
+
+.service-category-title {
+  background: whitesmoke;
+  padding: 5px;
+  text-align: center;
+  color: #8FC78F;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 #navArea {
   padding-top: 10px;
 }
