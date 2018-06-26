@@ -1,0 +1,6 @@
+- if logo.present?
+  div style="width: 25%; height: 25%"
+    = image_tag(logo.avatar_url, class: "customer-logo-image", title: logo.name)
+- else
+  div style="width: 25%; height: 25%"
+    = image_tag("no-image.png", class: "customer-logo-image")

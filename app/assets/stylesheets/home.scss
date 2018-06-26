@@ -26,6 +26,20 @@
   overflow: hidden;
 }
 
+#customerLogoSection {
+  float: left;
+  display: inline;
+  width: 100%;
+  background-color: #fff;
+  padding: 0 30px;
+  min-height: 200px;
+}
+
+.customer-logo-image {
+  height: 100px;
+  width: 100px;
+}
+
 #navArea {
   padding-top: 10px;
 }

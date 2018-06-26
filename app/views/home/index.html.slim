@@ -40,132 +40,66 @@ section#contentSection
                 figure.effect-layla
                   a.fancybox-buttons data-fancybox-group="button" href="images/photograph_img3.jpg" title=("Photography Ttile 6") 
                     img alt="" src="images/photograph_img3.jpg" /
-        / .single_post_content
-          h2
-            span Games
-          .single_post_content_left
-            ul.business_catgnav
-              li
-                figure.bsbig_fig.wow.fadeInDown
-                  a.featured_img href="pages/single_page.html" 
-                    img alt="" src="images/featured_img1.jpg" /
-                    span.overlay
-                  figcaption
-                    a href="pages/single_page.html"  Proin rhoncus consequat nisl eu ornare mauris
-                  p Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...
-          .single_post_content_right
-            ul.spost_nav
-              li
-                .media.wow.fadeInDown
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
-              li
-                .media.wow.fadeInDown
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img2.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
-              li
-                .media.wow.fadeInDown
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
-              li
-                .media.wow.fadeInDown
-                  a.media-left href="pages/single_page.html" 
-                    img alt="" src="images/post_img2.jpg" /
-                  .media-body
-                    a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
-    / .col-lg-4.col-md-4.col-sm-4
-      / aside.right_content
-        / .single_sidebar
-        /   h2
-        /     span Bài viết phổ biến
-        /   ul.spost_nav
-        /     - @latest_posts.sample(4).each do |post|
-        /       li
-        /         .media.wow.fadeInDown
-        /           a.media-left href="pages/single_page.html"
-        /             = image_tag(post.avatar_url) if post.avatar?
-        /             / img alt="" src="images/post_img1.jpg" /
-        /           .media-body
-        /             a.catg_title href="pages/single_page.html"
-        /               = post.title
-        .single_sidebar
-          ul.nav.nav-tabs role="tablist" 
-            li.active role="presentation" 
-              a aria-controls="home" data-toggle="tab" href="#category" role="tab"  Danh mục
-            li role="presentation" 
-              a aria-controls="profile" data-toggle="tab" href="#video" role="tab"  Video
-            li role="presentation" 
-              a aria-controls="messages" data-toggle="tab" href="#comments" role="tab"  Tags
-          .tab-content
-            #category.tab-pane.active role="tabpanel" 
-              ul
-                - @categories.each do |cate|
-                  li.cat-item
-                    a href="#"
-                      = cate.name
-            #video.tab-pane role="tabpanel" 
-              .vide_area
-                iframe allowfullscreen="" frameborder="0" height="250" src="http://www.youtube.com/embed/h5QWbURNEpA?feature=player_detailpage" width="100%" 
-            #comments.tab-pane role="tabpanel" 
-              ul
-                - @tags.each do |tag|
-                  li.cat-item
-                    a href="#"
-                      = tag.name
-              / ul.spost_nav
-              /   li
-              /     .media.wow.fadeInDown
-              /       a.media-left href="pages/single_page.html" 
-              /         img alt="" src="images/post_img1.jpg" /
-              /       .media-body
-              /         a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 1
-              /   li
-              /     .media.wow.fadeInDown
-              /       a.media-left href="pages/single_page.html" 
-              /         img alt="" src="images/post_img2.jpg" /
-              /       .media-body
-              /         a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 2
-              /   li
-              /     .media.wow.fadeInDown
-              /       a.media-left href="pages/single_page.html" 
-              /         img alt="" src="images/post_img1.jpg" /
-              /       .media-body
-              /         a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 3
-              /   li
-              /     .media.wow.fadeInDown
-              /       a.media-left href="pages/single_page.html" 
-              /         img alt="" src="images/post_img2.jpg" /
-              /       .media-body
-              /         a.catg_title href="pages/single_page.html"  Aliquam malesuada diam eget turpis varius 4
-        .single_sidebar.wow.fadeInDown
-          h2
-            span Sponsor
-          a.sideAdd href="#" 
-            img alt="" src="images/add_img.jpg" /
-        .single_sidebar.wow.fadeInDown
-          h2
-            span Category Archive
-          select.catgArchive
-            option Select Category
-            option Life styles
-            option Sports
-            option Technology
-            option Treads
-        .single_sidebar.wow.fadeInDown
-          h2
-            span Links
-          ul
-            li
-              a href="#"  Blog
-            li
-              a href="#"  Rss Feed
-            li
-              a href="#"  Login
-            li
-              a href="#"  Life &amp; Style
+  .single_post_content
+    h2
+      span Khách hàng
+    #myCarousel.carousel.slide data-ride="carousel" 
+      /! Indicators
+      ol.carousel-indicators
+        li.active data-slide-to="0" data-target="#myCarousel" 
+        li data-slide-to="1" data-target="#myCarousel" 
+        li data-slide-to="2" data-target="#myCarousel" 
+      /! Wrapper for slides
+      .carousel-inner
+        - if @logos.present?
+          - logo_sliders = @logos.each_slice(8).to_a
+          - logo_sliders.each_with_index do |logo_slider_elements, index|
+            .item.row class="#{'active' if index == 0}"
+              / img alt=("Los Angeles") src="la.jpg" /
+              .col-lg-2.col-md-2.col-sm-2
+              .col-lg-2.col-md-2.col-sm-2
+                = render partial: "logo_item", locals: {logo: logo_slider_elements[0]}
+                = render partial: "logo_item", locals: {logo: logo_slider_elements[1]}
+              .col-lg-2.col-md-2.col-sm-2
+                = render partial: "logo_item", locals: {logo: logo_slider_elements[2]}
+                = render partial: "logo_item", locals: {logo: logo_slider_elements[3]}
+              .col-lg-2.col-md-2.col-sm-2
+                = render partial: "logo_item", locals: {logo: logo_slider_elements[4]}
+                = render partial: "logo_item", locals: {logo: logo_slider_elements[5]}
+              .col-lg-2.col-md-2.col-sm-2
+                = render partial: "logo_item", locals: {logo: logo_slider_elements[6]}
+                = render partial: "logo_item", locals: {logo: logo_slider_elements[7]}
+              .col-lg-2.col-md-2.col-sm-2
+        - else
+          .item.row.active
+            / img alt=("Los Angeles") src="la.jpg" /
+            .col-lg-2.col-md-2.col-sm-2
+            .col-lg-2.col-md-2.col-sm-2
+              div style="width: 25%; height: 25%"
+                = image_tag("no-image.png", class: "customer-logo-image")
+              div style="width: 25%; height: 25%"
+                = image_tag("no-image.png", class: "customer-logo-image")
+            .col-lg-2.col-md-2.col-sm-2
+              div style="width: 25%; height: 25%"
+                = image_tag("no-image.png", class: "customer-logo-image")
+              div style="width: 25%; height: 25%"
+                = image_tag("no-image.png", class: "customer-logo-image")
+            .col-lg-2.col-md-2.col-sm-2
+              div style="width: 25%; height: 25%"
+                = image_tag("no-image.png", class: "customer-logo-image")
+              div style="width: 25%; height: 25%"
+                = image_tag("no-image.png", class: "customer-logo-image")
+            .col-lg-2.col-md-2.col-sm-2
+              div style="width: 25%; height: 25%"
+                = image_tag("no-image.png", class: "customer-logo-image")
+              div style="width: 25%; height: 25%"
+                = image_tag("no-image.png", class: "customer-logo-image")
+            .col-lg-2.col-md-2.col-sm-2
+      /! Left and right controls
+      a.left.carousel-control data-slide="prev" href="#myCarousel" 
+        span.glyphicon.glyphicon-chevron-left
+        span.sr-only Previous
+      a.right.carousel-control data-slide="next" href="#myCarousel" 
+        span.glyphicon.glyphicon-chevron-right
+        span.sr-only Next
+

@@ -1,0 +1,38 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Quản lý Logo Khách hàng
+            = link_to new_admin_customer_logo_path, class: "btn", style: "float: right; margin: 5px; margin-right: 55px;"
+              | Tạo mới
+          .widget-content
+            table.table.table-striped.table-bordered.action-table
+              thead
+                tr
+                  th Khách hàng
+                  th Logo
+                  th Mô tả
+                  th Vị trí
+                  th Kích hoạt
+                  th.td-actions style="width: 140px"
+              tbody
+                - @logos.each do |logo|
+                  tr
+                    td
+                      = logo.name
+                    td.text-center
+                      = image_tag(logo.avatar_url, size: 100)
+                    td
+                      = logo.description
+                    td
+                      = logo.view_order
+                    td
+                      = logo.active
+                    td.td-actions
+                      = link_to "Edit", edit_admin_customer_logo_path(logo), class: "btn btn-small btn-success"
+                      = link_to "Detail", admin_customer_logo_path(logo), class: "btn btn-small btn-success"
+                      = link_to admin_customer_logo_path(logo), class: "btn btn-danger btn-small", method: :delete do
+                        i.btn-icon-only.icon-remove

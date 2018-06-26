@@ -1,0 +1,39 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Quản lý Logo Khách hàng
+          .widget-content
+            = form_for @logo, url: admin_customer_logo_path(@logo), html: {class: "form-horizontal", method: :put} do |f|
+              fieldset
+                .control-group
+                  label.control-label for="table_code"
+                    | Khách hàng
+                  .controls
+                    = f.text_field :name, class: "span6"
+                .control-group
+                  label.control-label for="table_name"
+                    | Sử dụng
+                  .controls
+                    = f.check_box :active, {}, 1, 0
+                .control-group
+                  label.control-label for="table_name"
+                    | Logo
+                  .controls
+                    = f.file_field :avatar, class: "span6"
+                .control-group
+                  label.control-label for="table_name"
+                    | Mô tả
+                  .controls
+                    = f.text_field :description, class: "span6"
+                .control-group
+                  label.control-label for="content"
+                    | Vị trí
+                  .controls
+                    = f.number_field :view_order, class: "span6"
+                .form-actions
+                  = f.submit "Cập nhật", class: "btn btn-primary"
+                  = link_to "Huỷ", admin_customer_logos_path, class: "btn"
