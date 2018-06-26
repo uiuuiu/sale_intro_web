@@ -27,7 +27,7 @@
                     td
                       = post.user_id
                     td
-                      = post.category.name
+                      = post.category.try(:name)
                     td.td-actions
                       = link_to "Edit", edit_admin_post_path(post), class: "btn btn-small btn-success"
                       = link_to "Detail", admin_post_path(post), class: "btn btn-small btn-success"
