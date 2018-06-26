@@ -75,3 +75,12 @@
     /! /container
   /! /subnavbar-inner
 /! /subnavbar
+javascript:
+  pageUrl = window.location.href + "/";
+  $("ul.mainnav li a").each(function(index){
+    if(pageUrl.search(this.href + "/") != -1) {
+      $("ul.mainnav li.active").removeClass("active");
+      $(this).parent().addClass("active");
+      return;
+    }
+  });
