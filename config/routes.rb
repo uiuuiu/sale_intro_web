@@ -16,6 +16,11 @@ Rails.application.routes.draw do
     resources :service_posts
     resources :quality_policies
     resources :customer_logos
+    resources :document_files do
+      collection do
+        get :download
+      end
+    end
   end
   resources :abouts, only: [:index]
   resources :quality_policies, only: [:index]
@@ -25,4 +30,9 @@ Rails.application.routes.draw do
   resources :service_categories
   resources :service_posts
   resources :tags
+  resources :document_files do
+    collection do
+      get :download
+    end
+  end
 end

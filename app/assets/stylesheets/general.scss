@@ -7,7 +7,7 @@
   font-weight: lighter;
   line-height: 22px;
 }
-.hotline {
+.hotline-1 {
   width: 236px;
   height: 82px;
   background: url('hotline.png');
@@ -16,7 +16,25 @@
   position: absolute;
 }
 
-.hotline span {
+.hotline-1 span {
+  display: inline-block;
+  padding-top: 37px;
+  padding-left: 55px;
+  font-weight: bold;
+  font-size: 22px;
+  color: #e20000;
+}
+
+.hotline-2 {
+  width: 236px;
+  height: 82px;
+  background: url('hotline.png');
+  margin-top: 150px;
+  margin-left: 15px;
+  position: absolute;
+}
+
+.hotline-2 span {
   display: inline-block;
   padding-top: 37px;
   padding-left: 55px;

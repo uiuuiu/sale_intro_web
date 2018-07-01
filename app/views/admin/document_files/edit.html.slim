@@ -1,0 +1,29 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Quản lý Tài liệu
+          .widget-content
+            = form_for @document_file, url: admin_document_file_path(@document_file), html: {class: "form-horizontal", method: :put} do |f|
+              fieldset
+                .control-group
+                  label.control-label for="table_code"
+                    | Tiêu đề
+                  .controls
+                    = f.text_field :title, class: "span6"
+                .control-group
+                  label.control-label for="table_name"
+                    | Mô tả
+                  .controls
+                    = f.text_field :description, class: "span6"
+                .control-group
+                  label.control-label for="table_name"
+                    | Tải tài liệu
+                  .controls
+                    = f.file_field :file, class: "span6"
+                .form-actions
+                  = f.submit "Cập nhật", class: "btn btn-primary"
+                  = link_to "Huỷ", admin_document_files_path, class: "btn"

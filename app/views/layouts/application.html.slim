@@ -58,27 +58,33 @@ html
                 ul.tag_nav
                   - @categories.last(6).each do |cate|
                     li
-                      a href="#"
+                      = link_to category_path(cate)
                         = cate.name
             .col-lg-4.col-md-4.col-sm-4
               .footer_widget.wow.fadeInDown
-                h2 Nhãn
+                h2 Dịch vụ
                 ul.tag_nav
-                  - @tags.each do |tag|
-                    li.cat-item style="background: white"
-                      a href="#" style="color: brown"
-                        = tag.name
+                  - @service_categories.each do |cate|
+                    li.cat-item
+                      = link_to service_category_path(cate)
+                        = cate.name
             .col-lg-4.col-md-4.col-sm-4
               .footer_widget.wow.fadeInRightBig
                 h2 Liên hệ
-                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                p Trụ sở chính Đà Nẵng
                 address
-                  | Perfect News,1238 S . 123 St.Suite 25 Town City 3333,USA Phone: 123-326-789 Fax: 123-546-567
+                  | - Địa chỉ: Lô 494-B2.11, Khu số 7, Trung tâm Đô thị mới Tây Bắc, quận Liên Chiểu, Thành phố Đà Nẵng 
+                address
+                  | - Điện thoại:  0917.81.81.88
+                address
+                  | - Email: nangsuatchatluong.vnc@gmail.com
+                address
+                  | - Website: nangsuatchatluong.org
         .footer_bottom
           p.copyright
-            | Copyright © 2045
-            a href="index.html"  NewsFeed
-          p.developer Developed By Wpfreeware
+            | NangSuatChatLuong.Org
+          /   a href="index.html"  NewsFeed
+          / p.developer Developed By Wpfreeware
 
 script src="/assets/js/jquery.min.js" 
 script src="/assets/js/wow.min.js" 

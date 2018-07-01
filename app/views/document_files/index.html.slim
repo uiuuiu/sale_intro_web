@@ -1,0 +1,17 @@
+section#contentSection
+  .row
+    .col-lg-8.col-md-8.col-sm-8
+      .left_content
+        .single_page
+          ol.breadcrumb
+            li style="color: white"
+              | Tài liệu
+        - @document_files.each do |document_file|
+          .row.pb-10
+            .col-lg-12.col-md-12.col-sm-12
+              span.glyphicon.glyphicon-file
+              span 
+                = link_to download_document_files_path(id: document_file), style: "color: blue"
+                  = document_file.file.file.identifier
+          .seperator-post
+    = render partial: "layouts/right_side_content"

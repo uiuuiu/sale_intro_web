@@ -1,0 +1,33 @@
+.main-inner
+  .container
+    .row
+      .span12
+        .widget
+          .widget-header
+            span
+            h3 Quản lý Tài liệu
+            = link_to new_admin_document_file_path, class: "btn", style: "float: right; margin: 5px; margin-right: 55px;"
+              | Tạo mới
+          .widget-content
+            table.table.table-striped.table-bordered.action-table
+              thead
+                tr
+                  th Tiêu đề
+                  th Mô tả
+                  th Tên file
+                  th.td-actions style="width: 140px"
+              tbody
+                - @document_files.each do |document_file|
+                  tr
+                    td
+                      = document_file.title
+                    td
+                      = document_file.description
+                    td
+                      = link_to download_admin_document_files_path(id: document_file), download: document_file.file.file.identifier
+                        = document_file.file.file.identifier
+                    td.td-actions
+                      = link_to "Edit", edit_admin_document_file_path(document_file), class: "btn btn-small btn-success"
+                      / = link_to "Detail", admin_document_file_path(document_file), class: "btn btn-small btn-success"
+                      = link_to admin_document_file_path(document_file), class: "btn btn-danger btn-small", method: :delete do
+                        i.btn-icon-only.icon-remove

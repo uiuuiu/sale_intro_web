@@ -26,45 +26,36 @@ section#contentSection
             / img.img-center alt="" src="../images/single_post_img.jpg" /
             = @post.content.html_safe
           .social_link
-            ul.sociallink_nav
-              li
-                a href="#" 
-                  i.fa.fa-facebook
-              li
-                a href="#" 
-                  i.fa.fa-twitter
-              li
-                a href="#" 
-                  i.fa.fa-google-plus
-              li
-                a href="#" 
-                  i.fa.fa-linkedin
-              li
-                a href="#" 
-                  i.fa.fa-pinterest
+            / ul.sociallink_nav
+            /   li
+            /     a href="#" 
+            /       i.fa.fa-facebook
+            /   li
+            /     a href="#" 
+            /       i.fa.fa-twitter
+            /   li
+            /     a href="#" 
+            /       i.fa.fa-google-plus
+            /   li
+            /     a href="#" 
+            /       i.fa.fa-linkedin
+            /   li
+            /     a href="#" 
+            /       i.fa.fa-pinterest
           .related_post
             h2
               | Bài viết liên quan
               i.fa.fa-thumbs-o-up
             ul.spost_nav.wow.fadeInDown.animated
-              li
-                .media
-                  a.media-left href="single_page.html" 
-                    img alt="" src="../images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="single_page.html"  Aliquam malesuada diam eget turpis varius
-              li
-                .media
-                  a.media-left href="single_page.html" 
-                    img alt="" src="../images/post_img2.jpg" /
-                  .media-body
-                    a.catg_title href="single_page.html"  Aliquam malesuada diam eget turpis varius
-              li
-                .media
-                  a.media-left href="single_page.html" 
-                    img alt="" src="../images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="single_page.html"  Aliquam malesuada diam eget turpis varius
+              - @related_posts.sample(3).each do |related_post|
+                li
+                  .media
+                    = link_to post_path(related_post, class: "media-left")
+                      = image_tag(related_post.avatar_url, style: "width: 100%; height: 100%") if related_post.avatar?
+                    .media-body
+                      = link_to post_path(related_post, class: "catg_title")
+                        = related_post.title
+
     nav.nav-slit
       a.prev href="#" 
         span.icon-wrap
