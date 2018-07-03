@@ -41,3 +41,15 @@
                         span style="color: black;"
                           i.glyphicon.glyphicon-link &nbsp;
                         = remaining_post.title
+      - else
+        .col-lg-3.col-md-3.col-sm-3
+          .single_post_content
+            = link_to service_category_path(cate)
+              h4.service-category-title
+                span
+                  = cate.name
+                / .single_post_content_left
+            ul.business_catgnav.wow.fadeInDown
+              li style="height: 400px; overflow: hidden"
+            .home-post-seperator
+            ul.spost_nav
