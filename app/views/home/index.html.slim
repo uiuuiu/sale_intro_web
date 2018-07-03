@@ -52,47 +52,35 @@ section#contentSection
       /! Wrapper for slides
       .carousel-inner
         - if @logos.present?
-          - logo_sliders = @logos.each_slice(8).to_a
+          - logo_sliders = @logos.each_slice(4).to_a
           - logo_sliders.each_with_index do |logo_slider_elements, index|
             .item.row class="#{'active' if index == 0}"
               / img alt=("Los Angeles") src="la.jpg" /
               .col-lg-2.col-md-2.col-sm-2
               .col-lg-2.col-md-2.col-sm-2
                 = render partial: "logo_item", locals: {logo: logo_slider_elements[0]}
+              .col-lg-2.col-md-2.col-sm-2
                 = render partial: "logo_item", locals: {logo: logo_slider_elements[1]}
               .col-lg-2.col-md-2.col-sm-2
                 = render partial: "logo_item", locals: {logo: logo_slider_elements[2]}
+              .col-lg-2.col-md-2.col-sm-2
                 = render partial: "logo_item", locals: {logo: logo_slider_elements[3]}
-              .col-lg-2.col-md-2.col-sm-2
-                = render partial: "logo_item", locals: {logo: logo_slider_elements[4]}
-                = render partial: "logo_item", locals: {logo: logo_slider_elements[5]}
-              .col-lg-2.col-md-2.col-sm-2
-                = render partial: "logo_item", locals: {logo: logo_slider_elements[6]}
-                = render partial: "logo_item", locals: {logo: logo_slider_elements[7]}
               .col-lg-2.col-md-2.col-sm-2
         - else
           .item.row.active
             / img alt=("Los Angeles") src="la.jpg" /
             .col-lg-2.col-md-2.col-sm-2
             .col-lg-2.col-md-2.col-sm-2
-              div style="width: 25%; height: 25%"
-                = image_tag("no-image.png", class: "customer-logo-image")
-              div style="width: 25%; height: 25%"
+              div style="width: 50%; height: 50%"
                 = image_tag("no-image.png", class: "customer-logo-image")
             .col-lg-2.col-md-2.col-sm-2
-              div style="width: 25%; height: 25%"
-                = image_tag("no-image.png", class: "customer-logo-image")
-              div style="width: 25%; height: 25%"
+              div style="width: 50%; height: 50%"
                 = image_tag("no-image.png", class: "customer-logo-image")
             .col-lg-2.col-md-2.col-sm-2
-              div style="width: 25%; height: 25%"
-                = image_tag("no-image.png", class: "customer-logo-image")
-              div style="width: 25%; height: 25%"
+              div style="width: 50%; height: 50%"
                 = image_tag("no-image.png", class: "customer-logo-image")
             .col-lg-2.col-md-2.col-sm-2
-              div style="width: 25%; height: 25%"
-                = image_tag("no-image.png", class: "customer-logo-image")
-              div style="width: 25%; height: 25%"
+              div style="width: 50%; height: 50%"
                 = image_tag("no-image.png", class: "customer-logo-image")
             .col-lg-2.col-md-2.col-sm-2
       /! Left and right controls

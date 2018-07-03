@@ -35,9 +35,18 @@
   min-height: 200px;
 }
 
+#myCarousel {
+  background: url('bg2.jpg');
+  height: 200px;
+}
+
+.carousel-indicators {
+  bottom: -5px;
+}
+
 .customer-logo-image {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
 }
 
 #navArea {

@@ -116,7 +116,7 @@ img:hover{opacity:0.75}
 .slick-prev, .slick-next{background-color:#000; top:10%; width:40px; height:40px}
 .slick-prev:hover, .slick-next:hover{opacity:0.5}
 .latest_post{float:left; display:inline; width:100%}
-.latest_post > h2{background:none repeat scroll 0 0 #151515; color:#fff; font-family:'Oswald',sans-serif; font-size:18px; margin-top:5px; font-weight:400; margin-bottom:10px; margin-left:0; padding:0; position:relative; text-align:center; text-transform:uppercase}
+.latest_post > h2{background:none repeat scroll 0 0 #0DAA5B; color:#fff; font-family:'Oswald',sans-serif; font-size:18px; margin-top:5px; font-weight:400; margin-bottom:10px; margin-left:0; padding:0; position:relative; text-align:center; text-transform:uppercase}
 .latest_post > h2 span{padding:4px 10px}
 .latest_postnav{height:290px !important; margin-top:20px}
 .latest_postnav li{margin-bottom:10px; float:left; width:100%}
@@ -127,7 +127,7 @@ img:hover{opacity:0.75}
 #contentSection{float:left; display:inline; width:100%; background-color:#fff; padding:0 30px; min-height: 800px;}
 .left_content{float:left; display:inline; width:100%}
 .single_post_content{float:left; display:inline; width:100%; margin-bottom:20px}
-.single_post_content > h2{background:none repeat scroll 0 0 #151515; color:#fff; font-family:'Oswald',sans-serif; font-size:18px; font-weight:400; margin-bottom:10px; margin-left:0; margin-top:5px; padding:0; position:relative; text-align:center; text-transform:uppercase; margin-bottom:20px}
+.single_post_content > h2{background:none repeat scroll 0 0 #0DAA5B; color:#fff; font-family:'Oswald',sans-serif; font-size:18px; font-weight:400; margin-bottom:10px; margin-left:0; margin-top:5px; padding:0; position:relative; text-align:center; text-transform:uppercase; margin-bottom:20px}
 .single_post_content > h2 span{padding:4px 10px}
 .single_post_content_left{float:left; display:inline; width:49%}
 .business_catgnav{}
