@@ -1,9 +1,9 @@
 - @service_categories.each_slice(4).each do |pair_cates|
   .fashion_technology_area.row
     - pair_cates.each do |cate|
-      - if cate.service_posts.present?
-        - latest_post = cate.service_posts.last
-        - remaining_posts = cate.service_posts.to_a - [latest_post]
+      - if cate.home_service_posts.present?
+        - latest_post = cate.home_service_posts.last
+        - remaining_posts = cate.home_service_posts.to_a - [latest_post]
         .col-lg-3.col-md-3.col-sm-3
           .single_post_content
             = link_to service_category_path(cate)
@@ -15,7 +15,7 @@
               li style="height: 400px; overflow: hidden;"
                 figure.bsbig_fig
                   / a.featured_img href="pages/single_page.html"
-                  - post = cate.service_posts.last
+                  - post = cate.home_service_posts.last
                   = link_to service_post_path(post), class: "featured_img"
                     = image_tag(post.avatar_url, height: '250px', width: '100%') if post.avatar?
                     / img alt="" src="images/featured_img1.jpg" /
