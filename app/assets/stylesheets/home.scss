@@ -18,12 +18,14 @@
 }
 
 .service-category-title {
-  background: whitesmoke;
+  /*background: whitesmoke;*/
   padding: 5px;
   text-align: center;
   color: #8FC78F;
   white-space: nowrap;
   overflow: hidden;
+  border-radius: 25px;
+  border: 1px solid #8FC78F;
 }
 
 #customerLogoSection {
@@ -123,4 +125,29 @@ li.dropdown-2 ul.dropdown-menu-2 li:hover {
     float: none;
 }
 
+.fashion_technology_area .single_post_content:hover .service-category-title {
+  background: #8FC78F;
+  color: white;
+}
+
+.spost_nav .catg_title:hover .remaining-post-title {
+  color: red;
+}
+
+.phone-header {
+  padding-top: 50px;
+}
+
+.mail-header {
+  padding-top: 50px;
+}
+
+ul.info-header {
+  float: right;
+}
+
+ul.info-header li {
+  float: right;
+  margin-left: 20px;
+}
 

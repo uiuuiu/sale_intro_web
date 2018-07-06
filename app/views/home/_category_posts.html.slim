@@ -12,7 +12,7 @@
                   = cate.name
                 / .single_post_content_left
             ul.business_catgnav.wow.fadeInDown
-              li style="height: 400px; overflow: hidden"
+              li style="height: 400px; overflow: hidden;"
                 figure.bsbig_fig
                   / a.featured_img href="pages/single_page.html"
                   - post = cate.service_posts.last
@@ -20,13 +20,10 @@
                     = image_tag(post.avatar_url, height: '250px', width: '100%') if post.avatar?
                     / img alt="" src="images/featured_img1.jpg" /
                     span.overlay
-                  figcaption
-                    = link_to service_post_path(post), style: "font-weight: bold;"
-                      = post.title
-                    / a href="pages/single_page.html" style="font-weight: bold;"
-                    /   = cate.posts.last.title
-                  div
-                    p = strip_tags(post.content).truncate(100)
+                  figcaption style="padding: 5px; border-left: 1px solid #8FC78F; border-right: 1px solid #8FC78F;"
+                    = link_to service_post_path(post)
+                      p style="font-weight: bold;" = post.title
+                      p = strip_tags(post.content).truncate(100)
             / .single_post_content_right
             .home-post-seperator
             ul.spost_nav
@@ -40,7 +37,7 @@
                       = link_to service_post_path(remaining_post), class: "catg_title", style: "color: green"
                         span style="color: black;"
                           i.glyphicon.glyphicon-link &nbsp;
-                        = remaining_post.title
+                        span.remaining-post-title = remaining_post.title
       - else
         .col-lg-3.col-md-3.col-sm-3
           .single_post_content
@@ -50,6 +47,6 @@
                   = cate.name
                 / .single_post_content_left
             ul.business_catgnav.wow.fadeInDown
-              li style="height: 400px; overflow: hidden"
+              li style="height: 400px; overflow: hidden; background: red"
             .home-post-seperator
             ul.spost_nav
