@@ -8,22 +8,22 @@ section#contentSection
               | Tài liệu
         .row.pb-10
           .col-lg-1.col-md-1.col-sm-1
-          .col-lg-8.col-md-8.col-sm-8
+          .col-lg-7.col-md-7.col-sm-7
             span.strong Tên tài liệu
           .col-lg-2.col-md-2.col-sm-2
             span.strong Ngày tạo
-          .col-lg-1.col-md-1.col-sm-1
+          .col-lg-2.col-md-2.col-sm-2.text-center
             span.strong Tải về
         .seperator-post
         - @document_files.each do |document_file|
           .row.pb-10
             .col-lg-1.col-md-1.col-sm-1
               span.glyphicon.glyphicon-file
-            .col-lg-8.col-md-8.col-sm-8
+            .col-lg-7.col-md-7.col-sm-7
               = document_file.title
             .col-lg-2.col-md-2.col-sm-1
               = document_file.created_at.strftime("%d-%m-%Y")
-            .col-lg-1.col-md-1.col-sm-1
+            .col-lg-2.col-md-2.col-sm-2.text-center
               span 
                 = link_to download_document_files_path(id: document_file), style: "color: blue"
                   span.glyphicon.glyphicon-download-alt
