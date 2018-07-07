@@ -72,7 +72,7 @@ html
           .row
             .col-lg-4.col-md-4.col-sm-4
               .footer_widget.wow.fadeInLeftBig
-                h2 Danh mục
+                h2 Tin Tức
                 ul.tag_nav
                   - @categories.last(6).each do |cate|
                     li
@@ -83,7 +83,7 @@ html
                 h2 Dịch vụ
                 ul.tag_nav
                   - @service_categories.each do |cate|
-                    li.cat-item
+                    li
                       = link_to service_category_path(cate)
                         = cate.name
             .col-lg-4.col-md-4.col-sm-4
