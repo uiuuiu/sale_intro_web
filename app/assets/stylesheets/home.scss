@@ -153,11 +153,17 @@ li.dropdown-2 ul.dropdown-menu-2 li:hover {
 }
 
 ul.info-header {
-  float: right;
+  float: left;
+  top: 30px;
+  padding-top: 40px;
 }
 
 ul.info-header li {
   float: right;
   margin-left: 20px;
 }
+ ul.info-header li.li-seperator {
+  line-height: 28px;
+  color: gray;
+ }
 

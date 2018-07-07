@@ -44,19 +44,26 @@ html
           .col-lg-12.col-md-12.col-sm-12
             .header_bottom
               .row
-                .col-lg-6.col-md-6.col-sm-6
+                .col-lg-5.col-md-5.col-sm-5
                   = link_to root_path, class: "logo"
                     = image_tag("header-logo.png", style: "height: 70px;")
                   / span.span_logo Năng suất Chất lượng Việt
-                .col-lg-6.col-md-6.col-sm-6
+                .col-lg-7.col-md-7.col-sm-7
                   ul.info-header
                     li
-                      | Phone
-                      span 01636558289
+                      span
+                        input placeholder="Tìm kiếm"
+                      span
+                        button
+                          span.glyphicon.glyphicon-search
                     li
-                      | Email
-                      span nangsuatchatluong@gmail.com
+                      span.glyphicon.glyphicon-envelope style="font-size: 20px; color: green; top: 5px"
+                      span style="font-size: 15px; color: blue; padding-left: 2px" nangsuatchatluong@gmail.com
+                    li.li-seperator
+                      | |
                     li
+                      span.glyphicon.glyphicon-earphone style="font-size: 20px; color: green; top: 5px"
+                      span style="font-size: 15px; color: blue; padding-left: 2px" 0917.818188
 
       = render partial: "layouts/menu_bar"
       = yield
