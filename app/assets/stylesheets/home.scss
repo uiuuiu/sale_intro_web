@@ -156,14 +156,26 @@ ul.info-header {
   float: left;
   top: 30px;
   padding-top: 40px;
+  padding-left: 75px;
 }
 
 ul.info-header li {
   float: right;
   margin-left: 20px;
 }
- ul.info-header li.li-seperator {
+
+ul.info-header li.li-seperator {
   line-height: 28px;
   color: gray;
- }
+}
+
+ul.nav.navbar-nav.main_nav {
+  text-align: center;
+}
+
+ul.nav.navbar-nav.main_nav li {
+  
+}
+
+
 
