@@ -133,6 +133,15 @@ li.dropdown-2 ul.dropdown-menu-2 li:hover {
 
 .spost_nav .catg_title:hover .remaining-post-title {
   color: red;
+  border: 0px solid;
+  box-shadow: 0px 3px 18px #888888;
+}
+
+.remaining-category-post-list:hover {
+  border: 0px solid;
+  box-shadow: 0px 3px 18px #888888;
+  background: #8FC78F;
+  border-radius: 25px;
 }
 
 .phone-header {
