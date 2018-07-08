@@ -1,8 +1,8 @@
 .scrollToTop{background-color:#0DAA5B; color:#fff}
 .scrollToTop:hover, .scrollToTop:focus{background-color:#fff; color:#0DAA5B; border-color:1px solid #0DAA5B}
 .logo > span{color:#d083cf}
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{background-color:#018441}
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{background-color:#018441}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{background-color:#018441; width: 100%;}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{background-color:#018441; width:100%;}
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{background-color:#d083cf}
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{background-color:#d083cf}
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{background-color:#d083cf}

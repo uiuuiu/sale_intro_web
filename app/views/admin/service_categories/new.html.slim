@@ -15,6 +15,11 @@
                   .controls
                     = f.text_field :name, class: "span6"
                 .control-group
+                  label.control-label for="table_code"
+                    | Vị trí hiển thị
+                  .controls
+                    = f.number_field :order_pos, class: "span6"
+                .control-group
                   label.control-label for="table_name"
                     | Description
                   .controls

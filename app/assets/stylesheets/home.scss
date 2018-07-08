@@ -174,7 +174,16 @@ ul.nav.navbar-nav.main_nav {
 }
 
 ul.nav.navbar-nav.main_nav li {
-  
+  min-width: 120px;
+}
+
+ul.nav.navbar-nav.main_nav li a {
+  color: white;
+}
+
+ul.nav.navbar-nav.main_nav li a:hover {
+  min-width: 120px;
+  padding-left: 22px;
 }
 
 

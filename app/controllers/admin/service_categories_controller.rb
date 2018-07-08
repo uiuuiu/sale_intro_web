@@ -36,7 +36,7 @@ class Admin::ServiceCategoriesController < AdminController
 
   private
     def permit_params
-      params.require(:service_category).permit(:name, :description)
+      params.require(:service_category).permit(:name, :description, :order_pos)
     end
 
     def get_category
