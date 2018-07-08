@@ -177,8 +177,9 @@ ul.nav.navbar-nav.main_nav li {
   min-width: 120px;
 }
 
-ul.nav.navbar-nav.main_nav li a {
+ul.nav.navbar-nav.main_nav li a.first-menu-item {
   color: white;
+  font-weight: bold;
 }
 
 ul.nav.navbar-nav.main_nav li a:hover {
