@@ -23,8 +23,8 @@
                     span.overlay
                   figcaption style="padding: 5px;"
                     = link_to service_post_path(post)
-                      p style="font-weight: bold;" = post.title
-                      p = strip_tags(post.content).truncate(100)
+                      p style="font-weight: bold; font-size: 20px" = post.title
+                      p style="font-size: 15px" = strip_tags(post.content).truncate(100)
             / .single_post_content_right
             .home-post-seperator
             ul.spost_nav
