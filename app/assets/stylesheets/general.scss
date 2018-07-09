@@ -69,3 +69,11 @@
 .navbar-inverse .navbar-nav > li > a {
   border-left: 0.1px solid !important;
 }
+
+.fa.fa-zalo:before {
+  content: "Za";
+}
+
+.sociallink_nav li:nth-child(3) a {
+  background: none repeat scroll 0 0 #337ab7;
+}
