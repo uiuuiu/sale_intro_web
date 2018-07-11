@@ -139,7 +139,7 @@ img:hover{opacity:0.75}
 .single_post_content_right{float:right; display:inline; width:48%}
 .right_content{float:left; display:inline; width:100%; min-height:300px}
 .spost_nav{}
-.spost_nav li{float:left; display:block; width:100%; margin-bottom:10px}
+.spost_nav li{float:left; display:block; width:100%}
 .spost_nav .media-left{width:100px; height:80px}
 .media-left > img{height:70px; width:90px}
 .spost_nav .media-body > a{font-family:"Oswald",sans-serif}

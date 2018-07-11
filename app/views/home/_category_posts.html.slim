@@ -13,12 +13,12 @@
                   = cate.name
                 / .single_post_content_left
             ul.business_catgnav.wow.fadeInDown
-              li style="height: 350px; overflow: hidden; border: 0px solid; box-shadow: 0px 1px 3px #888888;"
+              li style="height: 200px; overflow: hidden; border: 0px solid; box-shadow: 0px 1px 3px #888888;"
                 figure.bsbig_fig
                   / a.featured_img href="pages/single_page.html"
                   - post = cate.home_service_posts.last
                   = link_to service_post_path(post), class: "featured_img"
-                    = image_tag(post.avatar_url, height: '250px', width: '100%') if post.avatar?
+                    = image_tag(post.avatar_url, height: '125px', width: '100%') if post.avatar?
                     / img alt="" src="images/featured_img1.jpg" /
                     span.overlay
                   figcaption style="padding: 5px;"
