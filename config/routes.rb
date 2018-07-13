@@ -35,4 +35,5 @@ Rails.application.routes.draw do
       get :download
     end
   end
+  resources :search, only: [:index]
 end

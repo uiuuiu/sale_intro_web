@@ -60,3 +60,5 @@ gem 'mini_magick'
 gem 'devise'
 gem 'acts_as_paranoid', '~> 0.5.0'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+# Search
+gem 'ransack'

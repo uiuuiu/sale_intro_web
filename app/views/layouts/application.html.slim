@@ -59,11 +59,13 @@ html
                         span.glyphicon.glyphicon-envelope style="font-size: 20px; color: green; top: 5px"
                       span style="font-size: 15px; color: blue; padding-left: 2px" nangsuatchatluong.vnc@gmail.com
                     .col-lg-4.col-md-4.col-sm-4
-                      span
-                        input placeholder="Tìm kiếm"
-                      span
-                        button
-                          span.glyphicon.glyphicon-search
+                      = search_form_for @q, url: search_index_path do |f|
+                        span
+                          = f.search_field :title_or_content_cont, placeholder: "Tìm kiếm"
+                          / input placeholder="Tìm kiếm"
+                        span
+                          button
+                            span.glyphicon.glyphicon-search
 
       = render partial: "layouts/menu_bar"
       = yield
