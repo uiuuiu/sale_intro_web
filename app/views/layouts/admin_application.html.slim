@@ -34,23 +34,25 @@ html lang="en"
               li.dropdown
                 a.dropdown-toggle data-toggle="dropdown" href="#"
                   i.icon-cog
-                  | Account
+                  | Chức năng
                   b.caret
                 ul.dropdown-menu
                   li
-                    a href="javascript:;"  Settings
+                    a href="javascript:;"  Cài đặt
                   li
-                    a href="javascript:;"  Help
+                    a href="javascript:;"  Giúp đỡ
+                    / a href="javascript:;"  Đăng xuất
               li.dropdown
                 a.dropdown-toggle data-toggle="dropdown" href="#"
                   i.icon-user
-                  | EGrappler.com
+                  = current_user.email
                   b.caret
                 ul.dropdown-menu
                   li
                     a href="javascript:;"  Profile
                   li
-                    a href="javascript:;"  Logout
+                    = link_to destroy_user_session_path, method: :delete
+                      | Đăng xuất
             form.navbar-search.pull-right
               input.search-query placeholder="Search" type="text" /
           /! /.nav-collapse

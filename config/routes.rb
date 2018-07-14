@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }, sign_out_via: [:get, :delete]
 
   root to: 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get 'admin/', to: 'admin/admin_home#index'
+  # get '/users/sign_out', to: 'devise/sessions#destroy'
   namespace :admin do
     resources :abouts
     resources :contacts
