@@ -30,8 +30,8 @@ section#navArea
                   = cate.name
                 ul.dropdown-menu-2
                   - cate.service_posts.each do |s_post|
-                    li
-                      = link_to s_post.title, service_post_path(s_post)
+                    li.link-dropdown-menu-2
+                      = link_to s_post.title.truncate(50), service_post_path(s_post)
         li.dropdown
           a.dropdown-toggle.first-menu-item aria-expanded="false" data-toggle="dropdown" href="#" role="button"  Tin tức
           ul.dropdown-menu role="menu" 

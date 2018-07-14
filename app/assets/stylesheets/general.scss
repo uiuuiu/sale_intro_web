@@ -103,3 +103,11 @@
       text-align: left;
    }
 }
+
+.link-dropdown-menu-2 {
+  min-width: 200px !important;
+  /* display: inline-block; */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
