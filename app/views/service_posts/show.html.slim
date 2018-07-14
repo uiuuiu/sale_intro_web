@@ -25,23 +25,23 @@ section#contentSection
             = image_tag(@post.avatar_url, class: "img-center") if @post.avatar?
             / img.img-center alt="" src="../images/single_post_img.jpg" /
             = @post.content.html_safe
-          .social_link
-            ul.sociallink_nav
-              li
-                a href="#" 
-                  i.fa.fa-facebook
-              li
-                a href="#" 
-                  i.fa.fa-twitter
-              li
-                a href="#" 
-                  i.fa.fa-google-plus
-              li
-                a href="#" 
-                  i.fa.fa-linkedin
-              li
-                a href="#" 
-                  i.fa.fa-pinterest
+          / .social_link
+          /   ul.sociallink_nav
+          /     li
+          /       a href="#" 
+          /         i.fa.fa-facebook
+          /     li
+          /       a href="#" 
+          /         i.fa.fa-twitter
+          /     li
+          /       a href="#" 
+          /         i.fa.fa-google-plus
+          /     li
+          /       a href="#" 
+          /         i.fa.fa-linkedin
+          /     li
+          /       a href="#" 
+          /         i.fa.fa-pinterest
           .related_post
             h2
               | Bài viết liên quan

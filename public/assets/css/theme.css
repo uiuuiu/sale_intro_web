@@ -12,12 +12,12 @@
 /*#prev-button{color:#d083cf}
 #next-button{color:#d083cf}*/
 .single_post_content > h2 span{background:none repeat scroll 0 0 #0DAA5B}
-.single_sidebar > h2 span{ background:none repeat scroll 0 0 #d083cf}
+/*.single_sidebar > h2 span{ background:none repeat scroll 0 0 #3A9C2B}*/
 .bsbig_fig figcaption a:hover{color:#d083cf}
 .spost_nav .media-body > a:hover{color:#d083cf}
 .cat-item a:hover{background-color:#d083cf}
-.nav-tabs > li > a:hover, .nav-tabs > li > a:focus{background-color:#d083cf}
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{background-color:#d083cf}
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus{background-color:#0DAA5B}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{background-color:#018441}
 .single_sidebar > ul > li a:hover{color:#d083cf}
 .footer_widget > h2:hover{color:#d083cf}
 .tag_nav li a:hover{color:#d083cf; border-color:#d083cf}
@@ -28,7 +28,7 @@
 .single_page_content h2, .single_page_content h3, .single_page_content h4, .single_page_content h5, .single_page_content h6{color:#d083cf}
 .nav-slit .icon-wrap{background-color:#d083cf}
 .nav-slit h3{background:#d083cf}
-.catgArchive{background-color:#d083cf}
+.catgArchive{background-color:#0DAA5B}
 .error_page > h3{color:#d083cf}
 .error_page > span{background:none repeat scroll 0 0 #d083cf}
 .error_page > a{background-color:#d083cf}
