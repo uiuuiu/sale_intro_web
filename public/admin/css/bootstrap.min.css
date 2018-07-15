@@ -450,7 +450,7 @@ q:before, q:after, blockquote:before, blockquote:after {
 }
 address {
 	display: block;
-	margin-bottom: 18px;
+	margin-bottom: 10px;
 	line-height: 18px;
 	font-style: normal;
 }

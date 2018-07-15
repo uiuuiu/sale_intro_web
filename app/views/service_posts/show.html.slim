@@ -7,8 +7,8 @@ section#contentSection
             li
               = link_to root_path, "Home"
             li
-              a href="#"  Technology
-            li.active Mobile
+              a href="#"  Dịch vụ
+            / li.active Mobile
           h1 =@post.title
           .post_commentbox
             a href="#" 
@@ -47,24 +47,14 @@ section#contentSection
               | Bài viết liên quan
               i.fa.fa-thumbs-o-up
             ul.spost_nav.wow.fadeInDown.animated
-              li
-                .media
-                  a.media-left href="single_page.html" 
-                    img alt="" src="../images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="single_page.html"  Aliquam malesuada diam eget turpis varius
-              li
-                .media
-                  a.media-left href="single_page.html" 
-                    img alt="" src="../images/post_img2.jpg" /
-                  .media-body
-                    a.catg_title href="single_page.html"  Aliquam malesuada diam eget turpis varius
-              li
-                .media
-                  a.media-left href="single_page.html" 
-                    img alt="" src="../images/post_img1.jpg" /
-                  .media-body
-                    a.catg_title href="single_page.html"  Aliquam malesuada diam eget turpis varius
+              - @related_posts.sample(3).each do |related_post|
+                li
+                  .media
+                    = link_to service_post_path(related_post, class: "media-left")
+                      = image_tag(related_post.avatar_url, style: "width: 100%; height: 100%") if related_post.avatar?
+                    .media-body
+                      = link_to service_post_path(related_post, class: "catg_title")
+                        = related_post.title
     nav.nav-slit
       a.prev href="#" 
         span.icon-wrap
