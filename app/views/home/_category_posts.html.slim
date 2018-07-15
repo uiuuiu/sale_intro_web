@@ -21,7 +21,7 @@
                     = image_tag(post.avatar_url, height: '125px', width: '100%') if post.avatar?
                     / img alt="" src="images/featured_img1.jpg" /
                     span.overlay
-                  figcaption style="padding: 5px;"
+                  figcaption style="padding: 5px; overflow: hidden; height: 45px;"
                     = link_to service_post_path(post)
                       p style="font-weight: bold; font-size: 14px" = post.title
                       / p style="font-size: 15px" = strip_tags(post.content).truncate(100)
