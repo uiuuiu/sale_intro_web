@@ -7,7 +7,9 @@ window.onscroll = ->
   currentScrollPos = window.pageYOffset
   if prevScrollpos > currentScrollPos
     $('nav.navbar.navbar-inverse').removeClass('navbar-fixed-top')
+    $('.nav.navbar-nav.main_nav li').removeClass('li-fixed-top')
   else
     $('nav.navbar.navbar-inverse').addClass('navbar-fixed-top')
+    $('.nav.navbar-nav.main_nav li').addClass('li-fixed-top')
   prevScrollpos = currentScrollPos
   return

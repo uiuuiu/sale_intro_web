@@ -1,5 +1,5 @@
 .phone-support {
-  background: #3A9C2B url('support.png') right bottom no-repeat;
+  /*background: #3A9C2B url('support.png') right bottom no-repeat;*/
   height: 300px;
   padding-bottom: 40px;
   color: #fff;
@@ -8,38 +8,63 @@
   line-height: 22px;
 }
 .hotline-1 {
-  width: 236px;
+  /*width: 236px;*/
   height: 82px;
-  background: url('hotline.png');
-  margin-top: 25px;
-  margin-left: 15px;
+  /*background: url('hotline.png');*/
+  /*margin-top: 25px;*/
+  /*margin-left: 15px;*/
   position: absolute;
 }
 
-.hotline-1 span {
+.hotline-1 span.phone-span {
   display: inline-block;
   padding-top: 37px;
-  padding-left: 55px;
+  padding-left: 10px;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 18px;
   color: #e20000;
 }
 
+.hotline-1 span img {
+  margin-top: -7px;
+}
+
 .hotline-2 {
-  width: 236px;
+  /*width: 236px;*/
   height: 82px;
-  background: url('hotline.png');
-  margin-top: 150px;
-  margin-left: 15px;
+  /*background: url('hotline.png');*/
+  margin-top: 50px;
+  /*margin-left: 15px;*/
   position: absolute;
 }
 
-.hotline-2 span {
+.hotline-2 span.phone-span {
   display: inline-block;
   padding-top: 37px;
-  padding-left: 55px;
+  padding-left: 10px;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 18px;
+  color: #e20000;
+}
+
+.hotline-2 span img {
+  margin-top: -7px;
+}
+
+.mail {
+  display: inline-block;
+  padding-top: 130px;
+  /*padding-left: 15px;*/
+  font-weight: bold;
+  font-size: 16px;
+  color: #e20000;
+}
+
+.mail span.mail-span {
+  display: inline-block;
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 18px;
   color: #e20000;
 }
 
@@ -74,9 +99,9 @@
   content: "Za";
 }
 
-.sociallink_nav li:nth-child(3) a {
+/*.sociallink_nav li:nth-child(3) a {
   background: none repeat scroll 0 0 #337ab7;
-}
+}*/
 
 .sociallink_nav li {
   padding: 0px 6px;
@@ -111,3 +136,8 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.li-fixed-top {
+  min-width: 150px !important;
+}
+

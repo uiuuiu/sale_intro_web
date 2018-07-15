@@ -5,9 +5,20 @@
         span Liên hệ
       .phone-support
         .hotline-1
-          span 0917.818188
+          a href="tel:+84917818188"
+            span
+              = image_tag("phone_support.png", size: 25)
+          span.phone-span 0917.818188
         .hotline-2
-          span 0985.262927
+          a href="tel:+84985262927"
+            span
+              = image_tag("phone_support.png", size: 25)
+          span.phone-span 0985.262927
+        .mail
+          a href="mailto:nangsuatchatluong.vnc@gmail.com"
+            span
+              = image_tag("mail_support.png", size: 25)
+          span.mail-span nangsuatchatluong.vnc@gmail.com
         / .support-info
         /   div style="padding-left: 20px; padding-top: 10px;"
         /     div
@@ -28,24 +39,23 @@
         /     div
         /       strong Email:
         /       span.pl-10 nangsuatchatluong@gmail.com
-    .single_sidebar
-      .social_link
-        ul.sociallink_nav
-          li
-            a.social-link-icon href="https://www.facebook.com/nangsuatchatluongvnc/" 
-              i.fa.fa-facebook
-          li
-            a.social-link-icon href="skype:live:4451b3368b2e7cd3?chat" 
-              i.fa.fa-skype
-          li
-            a.social-link-icon href="https://zalo.me/2500403357336478717" 
-              i.fa.fa-zalo
-          / li
-          /   a href="#" 
-          /     i.fa.fa-linkedin
-          / li
-          /   a href="#" 
-              i.fa.fa-pinterest
+        .social_link
+          ul.sociallink_nav
+            li
+              a.social-link-icon href="https://www.facebook.com/nangsuatchatluongvnc/" 
+                = image_tag("facebook_support.png", size: 60)
+            li
+              a.social-link-icon href="skype:live:4451b3368b2e7cd3?chat" 
+                = image_tag("skype_support.png", size: 60)
+            li
+              a.social-link-icon href="https://zalo.me/2500403357336478717" 
+                = image_tag("zalo_support.jpg", size: 60)
+            / li
+            /   a href="#" 
+            /     i.fa.fa-linkedin
+            / li
+            /   a href="#" 
+                i.fa.fa-pinterest
     .single_sidebar
       h2
         span Bài viết liên quan
