@@ -49,7 +49,7 @@ html
                     = image_tag("header-logo.png", style: "height: 70px;")
                   / span.span_logo Năng suất Chất lượng Việt
                 .col-lg-8.col-md-8.col-sm-8
-                  .row.header-pt-45
+                  .row.header-pt-25
                     .col-lg-3.col-md-3.col-sm-3.text-right.phone-header-div style="border-right: 1px solid"
                       a href="tel:+84917818188" title="Gọi"
                         span.glyphicon.glyphicon-earphone style="font-size: 20px; color: green; top: 5px"
@@ -60,12 +60,12 @@ html
                       span style="font-size: 15px; color: blue; padding-left: 2px" nangsuatchatluong.vnc@gmail.com
                     .col-lg-4.col-md-4.col-sm-4
                       = search_form_for @q, url: search_index_path do |f|
-                        span
-                          = f.search_field :title_or_content_cont, placeholder: "Tìm kiếm"
+                        .input-group
+                          = f.search_field :title_or_content_cont, placeholder: "Tìm kiếm", class: "form-control"
                           / input placeholder="Tìm kiếm"
-                        span
-                          button
-                            span.glyphicon.glyphicon-search
+                          span.input-group-btn
+                            button.btn.btn-default
+                              span.glyphicon.glyphicon-search
 
       = render partial: "layouts/menu_bar"
       = yield
