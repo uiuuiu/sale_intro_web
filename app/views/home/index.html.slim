@@ -43,14 +43,14 @@ section#contentSection
   .single_post_content
     h2
       span Khách hàng
-    #myCarousel.carousel.slide data-ride="carousel" 
+    #myCarousel.carousel.slide.carousel-inner-web data-ride="carousel" 
       /! Indicators
       ol.carousel-indicators
         li.active data-slide-to="0" data-target="#myCarousel" 
         li data-slide-to="1" data-target="#myCarousel" 
         li data-slide-to="2" data-target="#myCarousel" 
       /! Wrapper for slides
-      .carousel-inner.carousel-inner-web
+      .carousel-inner
         - if @logos.present?
           - logo_sliders = @logos.each_slice(4).to_a
           - logo_sliders.each_with_index do |logo_slider_elements, index|
@@ -83,7 +83,12 @@ section#contentSection
               div style="width: 50%; height: 50%"
                 = image_tag("no-image.png", class: "customer-logo-image")
             .col-lg-2.col-md-2.col-sm-2
-      .carousel-inner.carousel-inner-mobile
+    #myCarousel2.carousel.slide.carousel-inner-mobile data-ride="carousel" 
+      /! Indicators
+      ol.carousel-indicators
+        - @logos.each_with_index do |logo_slider_element, index|
+          li data-slide-to="#{index}" data-target="#myCarousel2" class="#{'active' if index == 0}"
+      .carousel-inner
         - if @logos.present?
           - @logos.each_with_index do |logo_slider_element, index|
             .item.row class="#{'active' if index == 0}"
