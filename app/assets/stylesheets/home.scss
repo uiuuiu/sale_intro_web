@@ -188,5 +188,28 @@ ul.nav.navbar-nav.main_nav li a:hover {
   padding-left: 22px;
 }
 
+.carousel-inner-mobile {
+  display: none;
+}
 
+.logo-image-div {
+  width: 50%;
+  height: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel-inner-mobile {
+    display: block;
+  }
+
+  .carousel-inner-web {
+    display: none;
+  }
+
+  .logo-image-div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+}
 
