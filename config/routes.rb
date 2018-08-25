@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :categories
   resources :service_categories
-  resources :service_posts
+  resources :service_posts, path: "dich-vu"
   resources :tags
   resources :document_files do
     collection do

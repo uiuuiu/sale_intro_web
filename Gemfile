@@ -62,3 +62,5 @@ gem 'acts_as_paranoid', '~> 0.5.0'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 # Search
 gem 'ransack'
+gem 'friendly_id', "~> 5.1.0"
+gem 'babosa'
