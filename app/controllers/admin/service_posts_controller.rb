@@ -11,22 +11,22 @@ class Admin::ServicePostsController < AdminController
   end
 
   def show
-    @post = ServicePost.find(params[:id])
+    @post = ServicePost.friendly.find(params[:id])
   end
 
   def edit
-    @post = ServicePost.find(params[:id])
+    @post = ServicePost.friendly.find(params[:id])
     @categories = ServiceCategory.all
   end
 
   def update
-    @post = ServicePost.find(params[:id])
+    @post = ServicePost.friendly.find(params[:id])
     @post.update(permit_params)
     redirect_to :back
   end
 
   def destroy
-    @post = ServicePost.find(params[:id])
+    @post = ServicePost.friendly.find(params[:id])
     @post.destroy
     redirect_to :back
   end
